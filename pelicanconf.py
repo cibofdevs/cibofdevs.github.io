@@ -103,8 +103,8 @@ LANGUAGES = [
 ]
 
 INTERESTS = [
-	'Gaming',
-	'Cricket'
+	'Programming',
+	'Guitar'
 ]
 
 EXPERIENCES = [
