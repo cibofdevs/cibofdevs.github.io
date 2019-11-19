@@ -32,7 +32,7 @@ h6 {
   font-weight: 700;
 }
 a {
-  color: #2d7788;
+  color: #272c33;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -40,7 +40,7 @@ a {
 }
 a:hover {
   text-decoration: underline;
-  color: #1a454f;
+  color: #272c33;
 }
 a:focus {
   text-decoration: none;
@@ -49,7 +49,7 @@ p {
   line-height: 1.5;
 }
 .wrapper {
-  background: #42A8C0;
+  background: #272c33;
   max-width: 960px;
   margin: 0 auto;
   position: relative;
@@ -58,7 +58,7 @@ p {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .sidebar-wrapper {
-  background: #42A8C0;
+  background: #272c33;
   position: absolute;
   right: 0;
   width: 240px;
@@ -71,7 +71,7 @@ p {
 }
 .sidebar-wrapper .profile-container {
   padding: 30px;
-  background: rgba(0, 0, 0, 0.2);
+  background: #272c33;
   text-align: center;
   color: #fff;
 }
@@ -167,7 +167,7 @@ p {
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 500;
-  color: #2d7788;
+  color: #272c33;
   position: relative;
   margin-top: 0;
   margin-bottom: 20px;
@@ -186,7 +186,7 @@ p {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  background: #2d7788;
+  background: #272c33;
   text-align: center;
   padding-top: 8px;
   font-size: 16px;
@@ -248,7 +248,7 @@ p {
 }
 .skillset .level-bar-inner {
   height: 12px;
-  background: #7bc2d3;
+  background: #272c33;
 }
 .footer {
   padding: 30px;
