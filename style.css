@@ -44,6 +44,10 @@ rules used in this template
 /* Header Style
 ====================================*/
 
+.hide-element {
+  display: none;
+}
+
 /* Main Menu Handler */
 .burger-menu {
   display: inline-block;
