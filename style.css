@@ -1,38 +1,22 @@
-p {
-  font-size: 0.9rem;
-  padding-top: 5pt;
+@media (max-width: 320px) {
+  .fa-sun {
+      font-size: .5rem;
+  }
+
+  .fa-moon {
+    font-size: .5rem;
+  }
 }
 
-a {
-  font-size: 0.9rem;
-  color: #00008B;
-  text-decoration: none;
-}
+@media (max-width: 700px) {
+  .fa-sun {
+      font-size: .75rem;
+  }
 
-a:visited {
-  font-size: 0.9rem;
-  color: #00008B;
-  text-decoration: none;
+  .fa-moon {
+    font-size: .75rem;
+  }
 }
-
-a:active {
-  font-size: 0.9rem;
-  color: #00008B;
-  text-decoration: none;
-}
-
-a:hover {
-  font-size: 0.9rem;
-  color: #00008B;
-  font-weight: bold;
-}
-
-img {
-  border-radius: 50%;
-  width: 10%;
-  justify-content: center;
-}
-
 
 /* Our default values set as CSS variables */
 :root {
@@ -67,14 +51,51 @@ img {
     format("opentype");
 }
 
-
 .divider {
   padding: 0 1rem;
 }
 
+body.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+body.light-mode {
+  background-color: #fff;
+  color: #000;
+}
+
 body {
+  scroll-behavior: smooth;
   font-family: HK Grotesk;
   background-color: var(--color-bg);
+  color: #000;
+  transition: background 500ms;
+}
+
+.switch {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0%;
+  right: 2%;
+}
+
+.st {
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.st:hover {
+  font-weight: 700;
+}
+
+.fa-moon {
+  color: pink;
+}
+
+.fa-sun {
+  color: yellow;
 }
 
 /* Page structure */
@@ -127,11 +148,6 @@ input {
   transition: 500ms;
 }
 
-/* Subheading */
-h2 {
-  color: #000000;
-}
-
 /* Interactive image */
 .illustration:active {
   transform: translateY(5px);
@@ -144,7 +160,6 @@ h2 {
 .dipped {
   transform: translateY(5px);
 }
-
 
 .img-div {
   align-items: center;
@@ -181,5 +196,45 @@ h2 {
   margin-right: auto;
   width: 30%;
   margin-bottom: 30px;
+}
+
+p {
+  font-size: 0.9rem;
+  padding-top: 5pt;
+}
+
+a {
+  font-size: 0.9rem;
+  color: #00008B;
+  text-decoration: none;
+}
+
+a:visited {
+  font-size: 0.9rem;
+  color: #00008B;
+  text-decoration: none;
+}
+
+a:active {
+  font-size: 0.9rem;
+  color: #00008B;
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 0.9rem;
+  color: #00008B;
+  font-weight: bold;
+}
+
+img {
+  border-radius: 50%;
+  width: 10%;
+  justify-content: center;
+  -moz-box-shadow: 0px 6px 5px #212121;
+  -webkit-box-shadow: 0px 6px 5px #212121;
+  box-shadow: 0px 6px 5px #212121;
+  -moz-border-radius:190px;
+  -webkit-border-radius:190px;
 }
 

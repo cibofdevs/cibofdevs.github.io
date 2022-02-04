@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 
     <title>Ahmad Wijaya</title>
 
@@ -17,10 +15,15 @@
     <!-- Import the webpage's javascript file -->
     <script src="script.js" defer></script>
   </head>
-  <body>
+  <body id="body" class="light-mode">
     <!-- The wrapper and content divs set margins and positioning -->
     <div class="wrapper">
       <div class="content" role="main">
+        <div class="switch">
+          <a class="st" onclick="toggleDarkLight()">
+            <p class="st fas fa-moon fa-2x" id="switchtext"></p>
+          </a>
+        </div>
         <div class="instructions">
           <div class="row">
             <div class="column">
@@ -48,17 +51,11 @@
               <div>
                 <a href="https://www.linkedin.com/in/cibofdevs/">linkedin</a> &nbsp; 
                 <a href="https://github.com/cibofdevs">github</a> &nbsp;
-                <a href="https://devpost.com/cibofdevs">devpost</a> &nbsp;
                 <a href="https://twitter.com/cibofdevs">twitter</a> &nbsp;
                 <a href="mailto:cibofdev@gmail.com">email</a> &nbsp;
-                <a
-                  href="https://drive.google.com/file/d/12g4B5ESgWtbtC-LyMFC9EveD6_Wr7dbI/view?usp=sharing"
-                  >resume</a
-                >
+                <a href="https://drive.google.com/file/d/12g4B5ESgWtbtC-LyMFC9EveD6_Wr7dbI/view?usp=sharing">resume</a>
               </div>
             </div>
-            <!-- Once you've added the button from the readme, click it in the page -->
-            <!-- Check out the function in script.js to see how it works -->
           </div>
         </div>
       </div>
