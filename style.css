@@ -56,7 +56,7 @@
 }
 
 body.dark-mode {
-  background-color: #000;
+  background-color: #212121;
   color: #fff;
 }
 
@@ -205,26 +205,27 @@ p {
 
 a {
   font-size: 0.9rem;
-  color: #00008B;
+  color: #304ffe;
   text-decoration: none;
 }
 
 a:visited {
   font-size: 0.9rem;
-  color: #00008B;
+  color: #304ffe;
   text-decoration: none;
 }
 
 a:active {
   font-size: 0.9rem;
-  color: #00008B;
+  color: #304ffe;
   text-decoration: none;
 }
 
 a:hover {
   font-size: 0.9rem;
-  color: #00008B;
+  color: #304ffe;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 img {
@@ -236,5 +237,9 @@ img {
   box-shadow: 0px 6px 5px #212121;
   -moz-border-radius:190px;
   -webkit-border-radius:190px;
+}
+
+.text-orange {
+  color: #ff6d00;
 }
 
