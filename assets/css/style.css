@@ -75,10 +75,10 @@ body {
 
 .switch {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   position: absolute;
-  top: 0%;
-  right: 2%;
+  top: 0.5%;
+  right: 3%;
 }
 
 .st {
