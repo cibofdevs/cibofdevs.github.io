@@ -1,66 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-site-verification" content="s1PxKQMZqgfIEUan47jgy4Ie_7bOiENEh8LSVh7vk-s" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hi! I'm Ahmad</title>
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <title>Ahmad Wijaya</title>
 
-    <!-- Import the webpage's stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <meta property="title" content="Ahmad Wijaya" />
+    <meta property="description" content="Software Engineer specialised in back-end development who loves learning new things and solving challenging problems" />
+    <meta property="og:title" content="Ahmad Wijaya" />
+    <meta property="og:description" content="Software Engineer specialised in back-end development who loves learning new things and solving challenging problems" />
+    <meta property="og:type" content="website" />
 
-    <!-- Import the webpage's javascript file -->
-    <script src="assets/js/script.js" defer></script>
-  </head>
-  <body id="body" class="light-mode">
-    <div class="wrapper">
-      <div class="content" role="main">
-        <div class="switch">
-          <a class="st" onclick="toggleDarkLight()">
-            <p class="st"><span class="fas fa-moon fa-2x" id="switchtext"></span></p>
-          </a>
-        </div>
-        <div class="instructions">
-          <div class="row">
-            <div class="column">
-              <div>
-                <img
-                  src="https://avatars.githubusercontent.com/u/31590671?v=4"
-                  class="centerimg"
-                />
-              </div>
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/b9a907eb86.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="intro-container" class="row no-gutters intro-container">
+            <div class="col-sm-12 intro">
+                <div>
+                    <div class="animate-intro">
+                        Hi there 👋, My name is
+                    </div>
+                    <h1 class="animate-intro name-intro highlight">
+                        Ahmad Wijaya
+                    </h1>
+                    <p class="animate-intro">
+                        I'm a Software Engineer specialised in back-end development who
+                        loves learning new things and solving challenging problems
+                    </p>
+                    <div class="animate-intro quote-intro">
+                        <div><i>You are never too old to set a new goal or to dream a new dream.</i></div>
+                    </div>
+                </div>
             </div>
-            <div class="column">
-              <h2><span class="text-orange">Hi!</span> I'm Ahmad.</h2>
-              <p>
-                I am a Software Developer, Currently, working as
-                <b>API & Microservices Developer</b> at <b>PT. XL Axiata Tbk.</b>
-                I specialize in back-end using microservices and cloud. 
-                I often use programming languages during development using Golang and Java.
-                But, I can also work with JavaScript using NodeJS. 
-              </p>
-              <p>
-                Computer science and software engineering has always been my passion.
-                Anything I dream of can become a reality by using one tool: a computer.
-              </p>
-              <br />
-              <div>
-                <a href="https://www.linkedin.com/in/cibofdevs">linkedin</a>
-                <a href="https://github.com/cibofdevs">github</a>
-                <a href="https://www.cloudskillsboost.google/public_profiles/2dd29a4f-2819-4682-bfce-dfb254f9fc31">cloudskillsboost</a>
-                <a href="https://dev.to/cibofdevs">dev.to</a>
-                <a href="https://twitter.com/cibofdevs">twitter</a>
-                <a href="https://www.instagram.com/cibofdevs">instagram</a>
-                <a href="mailto:cibofdev@gmail.com">email</a>
-                <a href="https://drive.google.com/file/d/1mQNt6FJy9sbM0XhfhpEwajwLJng0EtKz/view?usp=sharing">resume</a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+        <div id="about-container" class="row no-gutters about-container section">
+            <div class="col-md-12 about">
+                <div class="about-content animate-about">
+                    <div class="title">About Me</div>
+                    <div class="about-image-content medium animate-about">
+                        <img src="./assets/profile.jpg" alt="Profile">
+                    </div>
+
+                    <p>Hi, I'm Ahmad, I graduated from STMIK IKMI Cirebon with bachelor degree in Informatics Engineering</p>
+                    <p>I'm working as a Backend Engineer at <a href="https://alto.co.id" target="_blank">ALTO Network</a>, Jakarta, Indonesia</p>
+                    <div class="socials-container">
+                        <a href="https://www.linkedin.com/in/cibofdevs">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/cibofdevs">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cibofdevs">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:cibofdev@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image-content large animate-about">
+                    <img src="./assets/profile.jpg" alt="Profile">
+                </div>
+            </div>
+        </div>
+        <div id="experience-container" class="row no-gutters experience-container section animate-experience">
+            <div class="col-md-12 experience">
+                <div class="experience-content">
+                    <div class="title">Working Experience</div>
+                    <div class="experience-detail">
+                        <div class="experience-nav">
+                            <div id="experience-xl" class="selected-story">XL Axiata</div>
+                            <div id="experience-alto">ALTO Network</div>
+                        </div>
+                        <div class="experience-separator"></div>
+                        <div class="experience-story">
+                            <div id="xl-story" class="xl-story active-story">
+                                <div class="position-container">
+                                    <div class="position-header">
+                                        <div class="position-title">API & Microservices Developer</div>
+                                        <small>Apr 2020 - Aug 2022</small>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Implemented RESTful APIs in Java or Golang using microservice architecture
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Created a new service or redevelop an existing service by adding or enhancing new features
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Delivered high-quality code by following standardization clean code and clean architecture
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Collaborating with the QA team by reviewing test case scenarios and fixing the defects found during testing
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Provide an implementation plan document as a requirement for deployment
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Provide MBSS (Minimum Baseline Security Standard) document as a requirement for API penetration testing
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Support integration between client systems with the API that has already been delivered to production
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Documenting the whole development process and sharing knowledge with the operation teams
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="alto-story" class="alto-story">
+                                <div class="position-container">
+                                    <div class="position-header">
+                                        <div class="position-title">Backend Engineer</div>
+                                        <small>Sep 2022 - Present</small>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Participate in the entire application lifecycle, focusing on coding and debugging
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Design and implementation of database and data structures
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Write endpoints for API and ensure data validation.
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Optimize platform and API for maximum speed and scalability
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Troubleshoot and debug applications
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Integration of user-facing elements developed by front-end developers with serverside logic
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Building reusable code and libraries for future use
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Implementation of security and data protection
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Liaise with developers, designers, and system administrators to identify new features
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Get feedback from, and build solutions for users and customers.
+                                        </div>
+                                    </div>
+                                    <div class="position-content">
+                                        <i class="fas fa-caret-right"></i>
+                                        <div>
+                                            Write functional requirement documents and guides.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>&copy; <span id="current-year"></span> Made with <i class="fas fa-heart heart"></i> by Ahmad Wijaya</div>
+            <div class="socials-container">
+                <a href="https://www.linkedin.com/in/cibofdevs">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/cibofdevs">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/cibofdevs">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:cibofdev@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </footer>
     </div>
-  </body>
+
+    <script type="module" src="scripts/main.js"></script>
+</body>
 </html>
