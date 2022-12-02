@@ -1,7 +1,7 @@
 html, body {
-    background: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+    background: linear-gradient(to right, #e73c7e 0%, #23a6d5 51%, #23d5ab 100%);
     /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-    /* animation: gradient 15s ease infinite; */
+    animation: gradient 15s ease infinite;
     color: #1d283a;
     font-family: 'Roboto', sans-serif;
 }
