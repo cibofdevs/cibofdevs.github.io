@@ -1,10 +1,8 @@
 html, body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     animation: gradient 15s ease infinite;
-    background-size: 400% 400%;
     color: #1d283a;
     font-family: 'Roboto', sans-serif;
-    z-index: 0;
 }
 
 @keyframes gradient {
