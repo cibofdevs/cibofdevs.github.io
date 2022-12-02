@@ -1,20 +1,20 @@
 html, body {
-    background-color: #0e1525;
+    background-color: #09090b;
     color: #bbbbbb;
     font-family: 'Roboto', sans-serif;
 }
 
 a {
-    color: #00d4ff;
+    color: #dba44b;
 }
 
 a:hover {
     text-decoration: none;
-    color: #00d4ff;
+    color: #dba44b;
 }
 
 .highlight {
-    color: #62a3f8;
+    color: #dba44b;
 }
 
 .title {
@@ -88,7 +88,7 @@ a:hover {
 }
 
 .socials-container>a:hover {
-    color: #00d4ff;
+    color: #dba44b;
 }
 
 .socials-container>a:last-child {
@@ -128,7 +128,7 @@ a:hover {
 }
 
 .selected-story {
-    color: #00d4ff;
+    color: #dba44b;
     font-weight: bold;
 }
 
@@ -225,7 +225,7 @@ a:hover {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 12px;
-    color: #00d4ff;
+    color: #dba44b;
 }
 
 .card-badges>small {
@@ -244,7 +244,7 @@ a:hover {
 }
 
 .card-links>a:hover {
-    color: #00d4ff;
+    color: #dba44b;
 }
 
 .card-links>a:last-child {
