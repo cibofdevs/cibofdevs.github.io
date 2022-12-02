@@ -27,7 +27,7 @@ a:hover {
     color: #0e1525;
 }
 
-/* start: scrollbar
+/* start: scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -43,7 +43,7 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
-end: scrollbar */
+/* end: scrollbar */
 
 .highlight {
     color: #002b3d;
