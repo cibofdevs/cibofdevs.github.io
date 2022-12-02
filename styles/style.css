@@ -17,6 +17,11 @@ a:hover {
     color: #dba44b;
 }
 
+.tag-line {
+    color: #513448;
+
+}
+
 .title {
     font-size: 26px;
     font-weight: bold;
