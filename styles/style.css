@@ -1,25 +1,47 @@
 html, body {
-    background-color: #09090b;
-    color: #bbbbbb;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    animation: gradient 15s ease infinite;
+    color: #1d283a;
     font-family: 'Roboto', sans-serif;
 }
 
 a {
-    color: #dba44b;
+    color: #0e1525;
 }
 
 a:hover {
     text-decoration: none;
-    color: #dba44b;
+    color: #0e1525;
 }
 
+/* start: scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+/* end: scrollbar */
+
 .highlight {
-    color: #dba44b;
+    color: #002b3d;
 }
 
 .tag-line {
-    color: #513448;
-    font-weight: bold;
+    color: #0e1525;
 
 }
 
@@ -87,14 +109,14 @@ a:hover {
 }
 
 .socials-container>a {
-    color: #bbbbbb;
+    color: #0e1525;
     font-size: 22px;
     transition: color 0.25s;
     margin-right: 20px;
 }
 
 .socials-container>a:hover {
-    color: #dba44b;
+    color: #0e1525;
 }
 
 .socials-container>a:last-child {
@@ -126,7 +148,7 @@ a:hover {
 
 .experience-separator {
     width: 1px;
-    background-color: #808080;
+    background-color: #0e1525;
 }
 
 .experience-story {
@@ -134,7 +156,7 @@ a:hover {
 }
 
 .selected-story {
-    color: #dba44b;
+    color: #0e1525;
     font-weight: bold;
 }
 
@@ -148,12 +170,12 @@ a:hover {
 }
 
 .position-header > small {
-    color: #808080;
+    color: #0e1525;
 }
 
 .position-title {
     font-size: 17px;
-    color: #dba44b;
+    color: #0e1525;
     font-weight: bold;
 }
 
@@ -206,8 +228,8 @@ a:hover {
     margin: 9px;
     padding: 12px;
     box-sizing: border-box;
-    color: #bbbbbb;
-    border: 1px solid #bbbbbb;
+    color: #0e1525;
+    border: 1px solid #0e1525;
     border-radius: 5px;
 }
 
@@ -232,7 +254,7 @@ a:hover {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 12px;
-    color: #dba44b;
+    color: #0e1525;
 }
 
 .card-badges>small {
@@ -251,7 +273,7 @@ a:hover {
 }
 
 .card-links>a:hover {
-    color: #dba44b;
+    color: #0e1525;
 }
 
 .card-links>a:last-child {
@@ -269,7 +291,7 @@ footer > .socials-container {
 }
 
 .heart {
-    color: #f38181;
+    color: #cd051f;
 }
 
 @keyframes story-transition {
@@ -312,7 +334,6 @@ footer > .socials-container {
 
     .about-image-content > img {
         border-radius: 50%;
-        border: 5px solid #bbbbbb;
         width: 250px;
         height: 250px;
     }
