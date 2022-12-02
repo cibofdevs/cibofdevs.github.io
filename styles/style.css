@@ -5,12 +5,12 @@ html, body {
 }
 
 a {
-    color: #45b7f8;
+    color: #00d4ff;
 }
 
 a:hover {
     text-decoration: none;
-    color: #45b7f8;
+    color: #00d4ff;
 }
 
 .highlight {
@@ -88,7 +88,7 @@ a:hover {
 }
 
 .socials-container>a:hover {
-    color: #45b7f8;
+    color: #00d4ff;
 }
 
 .socials-container>a:last-child {
@@ -128,7 +128,7 @@ a:hover {
 }
 
 .selected-story {
-    color: #45b7f8;
+    color: #00d4ff;
     font-weight: bold;
 }
 
@@ -225,7 +225,7 @@ a:hover {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 12px;
-    color: #45b7f8;
+    color: #00d4ff;
 }
 
 .card-badges>small {
@@ -244,7 +244,7 @@ a:hover {
 }
 
 .card-links>a:hover {
-    color: #45b7f8;
+    color: #00d4ff;
 }
 
 .card-links>a:last-child {
