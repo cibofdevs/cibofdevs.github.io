@@ -1,9 +1,18 @@
-html, body {
-    background: linear-gradient(to right, #e73c7e 0%, #23a6d5 51%, #23d5ab 100%);
-    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-    animation: gradient 15s ease infinite;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
     color: #1d283a;
     font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
 
 @keyframes gradient {
@@ -16,7 +25,7 @@ html, body {
     100% {
       background-position: 0% 50%;
     }
-  }
+}
 
 a {
     color: #0e1525;
