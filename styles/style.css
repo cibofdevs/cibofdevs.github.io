@@ -211,7 +211,7 @@ a:hover {
     font-weight: bold;
 }
 
-.position-content {
+/* .position-content {
     display: flex;
     font-size: 14px;
     margin-bottom: 4px;
@@ -220,6 +220,11 @@ a:hover {
 .position-content>i {
     margin-right: 8px;
     line-height: unset !important;
+} */
+
+.job-desc {
+    font-size: 14px;
+    margin-bottom: 4px;
 }
 
 .xl-story,
