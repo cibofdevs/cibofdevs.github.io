@@ -2,6 +2,7 @@ import anime from './anime.es.js';
 import constants from './constants.js';
 
 $(document).ready(_ => {
+    console.log('Hello 🌍 from cibofdevs')
     let containerPositions = {};
     containerPositions[constants.INTRO_CONTAINER] = $(`#${constants.INTRO_CONTAINER}`).offset().top;
     containerPositions[constants.ABOUT_CONTAINER] = $(`#${constants.ABOUT_CONTAINER}`).offset().top;
