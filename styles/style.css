@@ -254,7 +254,8 @@ a:hover {
 }
 
 .xl-story,
-.alto-story {
+.alto-story,
+.tw-story {
     opacity: 0;
     display: none;
 }

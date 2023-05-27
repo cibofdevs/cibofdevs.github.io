@@ -43,26 +43,42 @@ $(document).ready(_ => {
     }
 
     function initActionItems() {
-        let EexperienceXL = $(`#${constants.EXPERIENCE_XL}`);
-        let EexperienceALTO = $(`#${constants.EXPERIENCE_ALTO}`);
+        let ExperienceXL = $(`#${constants.EXPERIENCE_XL}`);
+        let ExperienceALTO = $(`#${constants.EXPERIENCE_ALTO}`);
+        let ExperienceTW = $(`#${constants.EXPERIENCE_TW}`);
 
         let xlStory = $(`#${constants.XL_STORY}`);
         let altoStory = $(`#${constants.ALTO_STORY}`);
+        let twStory = $(`#${constants.TW_STORY}`);
 
-        EexperienceXL.click(() => {
-            EexperienceALTO.removeClass(constants.SELECTED_STORY);
-            EexperienceXL.addClass(constants.SELECTED_STORY);
+        ExperienceXL.click(() => {
+            ExperienceALTO.removeClass(constants.SELECTED_STORY);
+            ExperienceTW.removeClass(constants.SELECTED_STORY);
+            ExperienceXL.addClass(constants.SELECTED_STORY);
 
             altoStory.removeClass(constants.ACTIVE_STORY);
+            twStory.removeClass(constants.ACTIVE_STORY);
             xlStory.addClass(constants.ACTIVE_STORY);
         });
 
-        EexperienceALTO.click(() => {
-            EexperienceXL.removeClass(constants.SELECTED_STORY);
-            EexperienceALTO.addClass(constants.SELECTED_STORY);
+        ExperienceALTO.click(() => {
+            ExperienceXL.removeClass(constants.SELECTED_STORY);
+            ExperienceTW.removeClass(constants.SELECTED_STORY);
+            ExperienceALTO.addClass(constants.SELECTED_STORY);
 
             xlStory.removeClass(constants.ACTIVE_STORY);
+            twStory.removeClass(constants.ACTIVE_STORY);
             altoStory.addClass(constants.ACTIVE_STORY);
+        });
+
+        ExperienceTW.click(() => {
+            ExperienceXL.removeClass(constants.SELECTED_STORY);
+            ExperienceALTO.removeClass(constants.SELECTED_STORY);
+            ExperienceTW.addClass(constants.SELECTED_STORY);
+
+            xlStory.removeClass(constants.ACTIVE_STORY);
+            altoStory.removeClass(constants.ACTIVE_STORY);
+            twStory.addClass(constants.ACTIVE_STORY);
         });
     }
 
