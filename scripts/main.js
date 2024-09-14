@@ -46,39 +46,59 @@ $(document).ready(_ => {
         let ExperienceXL = $(`#${constants.EXPERIENCE_XL}`);
         let ExperienceALTO = $(`#${constants.EXPERIENCE_ALTO}`);
         let ExperienceTW = $(`#${constants.EXPERIENCE_TW}`);
+        let ExperiencePO = $(`#${constants.EXPERIENCE_PO}`);
 
         let xlStory = $(`#${constants.XL_STORY}`);
         let altoStory = $(`#${constants.ALTO_STORY}`);
         let twStory = $(`#${constants.TW_STORY}`);
+        let poStory = $(`#${constants.PO_STORY}`);
 
         ExperienceXL.click(() => {
             ExperienceALTO.removeClass(constants.SELECTED_STORY);
             ExperienceTW.removeClass(constants.SELECTED_STORY);
+            ExperiencePO.removeClass(constants.SELECTED_STORY);
             ExperienceXL.addClass(constants.SELECTED_STORY);
 
             altoStory.removeClass(constants.ACTIVE_STORY);
             twStory.removeClass(constants.ACTIVE_STORY);
+            poStory.removeClass(constants.ACTIVE_STORY);
             xlStory.addClass(constants.ACTIVE_STORY);
         });
 
         ExperienceALTO.click(() => {
             ExperienceXL.removeClass(constants.SELECTED_STORY);
             ExperienceTW.removeClass(constants.SELECTED_STORY);
+            ExperiencePO.removeClass(constants.SELECTED_STORY);
             ExperienceALTO.addClass(constants.SELECTED_STORY);
 
             xlStory.removeClass(constants.ACTIVE_STORY);
             twStory.removeClass(constants.ACTIVE_STORY);
+            poStory.removeClass(constants.ACTIVE_STORY);
             altoStory.addClass(constants.ACTIVE_STORY);
         });
 
         ExperienceTW.click(() => {
             ExperienceXL.removeClass(constants.SELECTED_STORY);
             ExperienceALTO.removeClass(constants.SELECTED_STORY);
+            ExperiencePO.removeClass(constants.SELECTED_STORY);
             ExperienceTW.addClass(constants.SELECTED_STORY);
 
             xlStory.removeClass(constants.ACTIVE_STORY);
             altoStory.removeClass(constants.ACTIVE_STORY);
+            poStory.removeClass(constants.ACTIVE_STORY);
             twStory.addClass(constants.ACTIVE_STORY);
+        });
+
+        ExperiencePO.click(() => {
+            ExperienceXL.removeClass(constants.SELECTED_STORY);
+            ExperienceALTO.removeClass(constants.SELECTED_STORY);
+            ExperienceTW.removeClass(constants.SELECTED_STORY);
+            ExperiencePO.addClass(constants.SELECTED_STORY);
+
+            xlStory.removeClass(constants.ACTIVE_STORY);
+            altoStory.removeClass(constants.ACTIVE_STORY);
+            twStory.removeClass(constants.ACTIVE_STORY);
+            poStory.addClass(constants.ACTIVE_STORY);
         });
     }
 

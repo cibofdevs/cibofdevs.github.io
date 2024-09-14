@@ -255,7 +255,8 @@ a:hover {
 
 .xl-story,
 .alto-story,
-.tw-story {
+.tw-story,
+.po-story {
     opacity: 0;
     display: none;
 }
