@@ -1,123 +1,174 @@
 import anime from './anime.es.js';
-import constants from './constants.js';
 
-$(document).ready(_ => {
-    console.log('Hello 🌍 from cibofdevs')
-    let containerPositions = {};
-    containerPositions[constants.INTRO_CONTAINER] = $(`#${constants.INTRO_CONTAINER}`).offset().top;
-    containerPositions[constants.ABOUT_CONTAINER] = $(`#${constants.ABOUT_CONTAINER}`).offset().top;
-    containerPositions[constants.EXPERIENCE_CONTAINER] = $(`#${constants.EXPERIENCE_CONTAINER}`).offset().top;
+// Initialize typed.js
+const typed = new Typed('#typewriter-text', {
+    strings: [
+        'Backend Developer',
+        'Java Specialist',
+        'Cloud Engineer',
+        'Problem Solver'
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 2000,
+    loop: true
+});
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize EmailJS with your public key
+    emailjs.init(config.EMAILJS_PUBLIC_KEY);
+
+    // Update current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Initialize container positions
+    let containerPositions = {
+        'intro': document.getElementById('intro')?.offsetTop || 0,
+        'about': document.getElementById('about')?.offsetTop || 0,
+        'experience': document.getElementById('experience')?.offsetTop || 0,
+        'contact': document.getElementById('contact')?.offsetTop || 0
+    };
+
+    // Initialize shown status
     let containerShown = {};
-    let containerClass = {};
-    containerClass[constants.INTRO_CONTAINER] = constants.ANIMATE_INTRO;
-    containerClass[constants.ABOUT_CONTAINER] = constants.ANIMATE_ABOUT;
-    containerClass[constants.EXPERIENCE_CONTAINER] = constants.ANIMATE_EXPERIENCE;
 
-    function init() {
-        initAnimations();
-        initActionItems();
+    // Animation function
+    function animate(containerId) {
+        const animateClass = `animate-${containerId}`;
+        const elements = document.getElementsByClassName(animateClass);
+        
+        anime({
+            targets: elements,
+            opacity: [0, 1],
+            translateY: [20, 0],
+            easing: 'easeOutExpo',
+            duration: 800,
+            delay: anime.stagger(200)
+        });
 
-        $('#current-year').text(new Date().getFullYear());
+        containerShown[containerId] = true;
     }
 
-    function initAnimations() {
-        for (const key of Object.keys(containerPositions)) {
-            let currentPosition = window.pageYOffset + window.innerHeight;
-            if (currentPosition > containerPositions[key]) {
+    // Scroll handler
+    function handleScroll() {
+        const currentPosition = window.pageYOffset + window.innerHeight;
+
+        for (const [key, value] of Object.entries(containerPositions)) {
+            if (!containerShown[key] && currentPosition > value) {
                 animate(key);
-                containerShown[key] = true;
             }
         }
+    }
 
-        $(window).scroll(_ => {
-            for (const key of Object.keys(containerPositions)) {
-                let currentPosition = window.pageYOffset + window.innerHeight;
-                // if (key === constants.PROJECT_CONTAINER) console.log(currentPosition, containerPositions[key]);
-                if (!containerShown[key] && currentPosition > containerPositions[key]) {
-                    animate(key);
-                    containerShown[key] = true;
-                }
+    // Initialize scroll listener
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    // Experience timeline toggle
+    const showMoreBtn = document.getElementById('showMore');
+    const previousPositions = document.querySelector('.previous-positions');
+    
+    if (showMoreBtn && previousPositions) {
+        // Set initial state
+        previousPositions.style.display = 'none';
+        previousPositions.style.opacity = '0';
+        
+        showMoreBtn.addEventListener('click', function() {
+            console.log('Button clicked');
+            
+            if (previousPositions.style.display === 'none' || previousPositions.style.display === '') {
+                previousPositions.style.display = 'block';
+                setTimeout(() => {
+                    previousPositions.style.opacity = '1';
+                }, 10);
+                showMoreBtn.textContent = 'Hide Previous Positions';
+                showMoreBtn.classList.add('active');
+            } else {
+                previousPositions.style.opacity = '0';
+                setTimeout(() => {
+                    previousPositions.style.display = 'none';
+                }, 300);
+                showMoreBtn.textContent = 'Show Previous Positions';
+                showMoreBtn.classList.remove('active');
             }
         });
     }
 
-    function initActionItems() {
-        let ExperienceXL = $(`#${constants.EXPERIENCE_XL}`);
-        let ExperienceALTO = $(`#${constants.EXPERIENCE_ALTO}`);
-        let ExperienceTW = $(`#${constants.EXPERIENCE_TW}`);
-        let ExperiencePO = $(`#${constants.EXPERIENCE_PO}`);
+    // Navbar active state
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
-        let xlStory = $(`#${constants.XL_STORY}`);
-        let altoStory = $(`#${constants.ALTO_STORY}`);
-        let twStory = $(`#${constants.TW_STORY}`);
-        let poStory = $(`#${constants.PO_STORY}`);
+    function setActiveLink() {
+        let current = '';
 
-        ExperienceXL.click(() => {
-            ExperienceALTO.removeClass(constants.SELECTED_STORY);
-            ExperienceTW.removeClass(constants.SELECTED_STORY);
-            ExperiencePO.removeClass(constants.SELECTED_STORY);
-            ExperienceXL.addClass(constants.SELECTED_STORY);
-
-            altoStory.removeClass(constants.ACTIVE_STORY);
-            twStory.removeClass(constants.ACTIVE_STORY);
-            poStory.removeClass(constants.ACTIVE_STORY);
-            xlStory.addClass(constants.ACTIVE_STORY);
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.pageYOffset >= sectionTop - 60) {
+                current = section.getAttribute('id');
+            }
         });
 
-        ExperienceALTO.click(() => {
-            ExperienceXL.removeClass(constants.SELECTED_STORY);
-            ExperienceTW.removeClass(constants.SELECTED_STORY);
-            ExperiencePO.removeClass(constants.SELECTED_STORY);
-            ExperienceALTO.addClass(constants.SELECTED_STORY);
-
-            xlStory.removeClass(constants.ACTIVE_STORY);
-            twStory.removeClass(constants.ACTIVE_STORY);
-            poStory.removeClass(constants.ACTIVE_STORY);
-            altoStory.addClass(constants.ACTIVE_STORY);
-        });
-
-        ExperienceTW.click(() => {
-            ExperienceXL.removeClass(constants.SELECTED_STORY);
-            ExperienceALTO.removeClass(constants.SELECTED_STORY);
-            ExperiencePO.removeClass(constants.SELECTED_STORY);
-            ExperienceTW.addClass(constants.SELECTED_STORY);
-
-            xlStory.removeClass(constants.ACTIVE_STORY);
-            altoStory.removeClass(constants.ACTIVE_STORY);
-            poStory.removeClass(constants.ACTIVE_STORY);
-            twStory.addClass(constants.ACTIVE_STORY);
-        });
-
-        ExperiencePO.click(() => {
-            ExperienceXL.removeClass(constants.SELECTED_STORY);
-            ExperienceALTO.removeClass(constants.SELECTED_STORY);
-            ExperienceTW.removeClass(constants.SELECTED_STORY);
-            ExperiencePO.addClass(constants.SELECTED_STORY);
-
-            xlStory.removeClass(constants.ACTIVE_STORY);
-            altoStory.removeClass(constants.ACTIVE_STORY);
-            twStory.removeClass(constants.ACTIVE_STORY);
-            poStory.addClass(constants.ACTIVE_STORY);
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+            }
         });
     }
 
-    function animate(key) {
-        let animateObj = {
-            targets: document.getElementsByClassName(containerClass[key]),
-            opacity: 1,
-            easing: 'linear',
-            duration: 500,
-            delay: anime.stagger(300, {start: 200})
-        };
+    window.addEventListener('scroll', setActiveLink);
 
-        if (key === constants.INTRO_CONTAINER) {
-            animateObj['translateY'] = [25, 0];
-            anime(animateObj);
-        } else {
-            anime(animateObj);
-        }
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Contact form handler
+    const contactForm = document.getElementById('contact-form');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Disable submit button and show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to_email: 'cibofdev@gmail.com'
+            };
+
+            try {
+                await emailjs.send(
+                    config.EMAILJS_SERVICE_ID,
+                    config.EMAILJS_TEMPLATE_ID,
+                    templateParams
+                );
+                
+                // Show success message
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            } catch (error) {
+                console.error('Error sending email:', error);
+                alert('Sorry, there was an error sending your message. Please try again later.');
+            } finally {
+                // Re-enable submit button and restore original text
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Send Message';
+            }
+        });
     }
-
-    init();
 });
