@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Wijaya | Software Engineer</title>
+
+    <meta property="title" content="Ahmad Wijaya | Software Engineer" />
+    <meta property="description"
+        content="Senior Software Engineer with expertise in Java, Go, and Python. Specializing in backend development, microservices, and cloud solutions." />
+    <meta property="og:title" content="Ahmad Wijaya | Software Engineer" />
+    <meta property="og:description"
+        content="Senior Software Engineer with expertise in Java, Go, and Python. Specializing in backend development, microservices, and cloud solutions." />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.5.2/css/pro.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-glass">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="logo-container">
+                        <i class="fa-solid fa-code text-white"></i>
+                    </div>
+                    <span class="fw-bold">Ahmad W.</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#intro">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Intro Section -->
+        <section id="intro" class="row min-vh-100 align-items-center intro-container">
+            <div class="col-lg-8 intro">
+                <div class="animate-intro">
+                    <div class="greeting">
+                        <span class="wave">👋</span> Hi there, I'm
+                    </div>
+                    <h1 class="name-intro gradient-text">
+                        Ahmad Wijaya
+                    </h1>
+                    <div class="typewriter">
+                        <span id="typewriter-text"></span><span class="cursor">|</span>
+                    </div>
+                    <p class="mt-4 description">
+                        A <span class="highlight-container"><span class="highlight">Senior Software Engineer</span></span> 
+                        with deep expertise in backend development. Passionate about building scalable systems 
+                        and embracing cutting-edge technologies to solve complex challenges.
+                    </p>
+                    <div class="cta-buttons mt-5">
+                        <a href="#contact" class="btn btn-primary me-3">Get in Touch</a>
+                        <a href="#experience" class="btn btn-outline-light">View Experience</a>
+                    </div>
+                    <div class="tech-stack mt-5">
+                        <p class="tech-stack-title">Tech Stack</p>
+                        <div class="tech-icons">
+                            <i class="fab fa-java" title="Java"></i>
+                            <i class="fab fa-golang" title="Golang"></i>
+                            <i class="fab fa-python" title="Python"></i>
+                            <i class="fab fa-docker" title="Docker"></i>
+                            <i class="fab fa-aws" title="AWS"></i>
+                            <i class="fab fa-kubernetes" title="Kubernetes"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 d-none d-lg-block">
+                <div class="animate-intro floating-image">
+                    <img src="assets/profile.jpg" alt="Ahmad Wijaya" class="img-fluid rounded-circle shadow-lg">
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section id="about" class="row min-vh-100 about-container section">
+            <div class="col-lg-12">
+                <div class="section-title animate-about">
+                    <h2><i class="fad fa-user-circle fa-fw"></i> About Me</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 animate-about">
+                        <div class="about-content">
+                            <p class="lead">Hi, I'm Ahmad! 👨‍💻</p>
+                            <p>Currently working as a <strong class="highlight">Java Developer Specialist @ PAYOK</strong> in Dubai, UAE. 
+                               With over 5 years of experience in software development, I've worked across various domains including:</p>
+                            
+                            <!-- Domain Cards -->
+                            <div class="domain-cards">
+                                <div class="domain-card">
+                                    <i class="fa fa-browser"></i>
+                                    <h4>Digital Services</h4>
+                                </div>
+                                <div class="domain-card">
+                                    <i class="fa fa-signal-stream"></i>
+                                    <h4>Telecommunications</h4>
+                                </div>
+                                <div class="domain-card">
+                                    <i class="fa fa-chart-pie"></i>
+                                    <h4>Finance</h4>
+                                </div>
+                                <div class="domain-card">
+                                    <i class="fa fa-credit-card"></i>
+                                    <h4>Payment Gateway</h4>
+                                </div>
+                            </div>
+
+                            <div class="skills-section mt-4">
+                                <h3>Core Competencies</h3>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Java</span>
+                                    <span class="skill-tag">Go</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Microservices</span>
+                                    <span class="skill-tag">Docker</span>
+                                    <span class="skill-tag">Kubernetes</span>
+                                    <span class="skill-tag">Cloud Services</span>
+                                    <span class="skill-tag">CI/CD</span>
+                                    <span class="skill-tag">Agile</span>
+                                    <span class="skill-tag">Clean Code</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 animate-about">
+                        <div class="about-image-wrapper">
+                            <div class="about-image-content">
+                                <img src="assets/profile.jpg" alt="Ahmad Wijaya" class="img-fluid rounded-3 shadow">
+                                <div class="stats-cards">
+                                    <div class="stats-card">
+                                        <h3>5+</h3>
+                                        <p>Years of Experience</p>
+                                    </div>
+                                    <div class="stats-card">
+                                        <h3>50+</h3>
+                                        <p>Projects Completed</p>
+                                    </div>
+                                    <div class="stats-card">
+                                        <h3>3</h3>
+                                        <p>Countries Worked</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="row experience-container section">
+            <div class="col-lg-12">
+                <div class="section-title animate-experience">
+                    <h2><i class="fad fa-briefcase fa-fw"></i> Experience</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="experience-timeline animate-experience">
+                    <div class="timeline-container">
+                        <!-- Current Position -->
+                        <div class="timeline-item current">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Java Developer Specialist</h3>
+                                    <span class="company">PAYOK</span>
+                                    <span class="duration">Sep 2024 - Present</span>
+                                    <span class="location"><i class="fas fa-map-marker-alt"></i> Dubai, UAE</span>
+                                </div>
+                                <ul class="timeline-list">
+                                    <li>Lead backend development using Java and Spring Boot for enterprise systems</li>
+                                    <li>Integrate APIs with banking and financial institutions</li>
+                                    <li>Maintain and optimize existing codebase for better performance</li>
+                                    <li>Write comprehensive technical documentation and API specifications</li>
+                                </ul>
+                                <div class="tech-tags">
+                                    <span>Java</span>
+                                    <span>Spring Boot</span>
+                                    <span>Microservices</span>
+                                    <span>RESTful APIs</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TIMWETECH -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Technology Specialist</h3>
+                                    <span class="company">TIMWETECH</span>
+                                    <span class="duration">Jun 2023 - Sep 2024</span>
+                                    <span class="location"><i class="fas fa-map-marker-alt"></i> Lisbon, Portugal (Remote)</span>
+                                </div>
+                                <ul class="timeline-list">
+                                    <li>Architected solutions based on client requirements</li>
+                                    <li>Developed full-stack applications using Java and Angular</li>
+                                    <li>Managed API Gateway infrastructure using Kong</li>
+                                </ul>
+                                <div class="tech-tags">
+                                    <span>Java</span>
+                                    <span>Angular</span>
+                                    <span>Kong Gateway</span>
+                                    <span>Docker</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Toggle Button -->
+                        <div class="timeline-toggle">
+                            <button id="showMore" class="btn">Show Previous Positions</button>
+                        </div>
+
+                       <!-- Previous Positions -->
+                        <div class="previous-positions">
+                            <!-- Alto Network -->
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3>Backend Engineer</h3>
+                                        <span class="company">Alto Network</span>
+                                        <span class="duration">Sep 2022 - Jun 2023</span>
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</span>
+                                    </div>
+                                    <ul class="timeline-list">
+                                        <li>Developed microservices for digital payment solutions</li>
+                                        <li>Implemented clean architecture principles</li>
+                                        <li>Worked in an agile environment with daily standups</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- XL Axiata -->
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3>API & Microservices Developer</h3>
+                                        <span class="company">XL Axiata</span>
+                                        <span class="duration">Apr 2020 - Sep 2022</span>
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</span>
+                                    </div>
+                                    <ul class="timeline-list">
+                                        <li>Built and maintained APIs for telecommunication services</li>
+                                        <li>Implemented security standards and documentation</li>
+                                        <li>Collaborated with cross-functional teams</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="row min-vh-100 contact-container section">
+            <div class="col-lg-12">
+                <div class="section-title animate-contact">
+                    <h2><i class="fad fa-envelope-open-text fa-fw"></i> Get in Touch</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 animate-contact">
+                        <div class="contact-info">
+                            <h3>Let's Connect!</h3>
+                            <p class="lead">I'm always open to discussing new projects, opportunities in software development, or tech in general.</p>
+                            
+                            <div class="contact-cards">
+                                <div class="contact-card">
+                                    <i class="fas fa-envelope"></i>
+                                    <div class="contact-details">
+                                        <h4>Email</h4>
+                                        <a href="mailto:cibofdev@gmail.com">cibofdev@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <i class="fab fa-linkedin"></i>
+                                    <div class="contact-details">
+                                        <h4>LinkedIn</h4>
+                                        <a href="https://www.linkedin.com/in/cibofdevs" target="_blank">linkedin.com/in/cibofdevs</a>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <i class="fab fa-github"></i>
+                                    <div class="contact-details">
+                                        <h4>GitHub</h4>
+                                        <a href="https://github.com/cibofdevs" target="_blank">github.com/cibofdevs</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="social-links">
+                                <h4>Follow Me On</h4>
+                                <div class="social-icons">
+                                    <a href="https://medium.com/@cibofdevs" target="_blank" class="social-icon">
+                                        <i class="fab fa-medium"></i>
+                                    </a>
+                                    <a href="https://x.com/cibofdevs" target="_blank" class="social-icon">
+                                        <i class="fa-brands fa-x-twitter"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/cibofdevs" target="_blank" class="social-icon">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 animate-contact">
+                        <div class="contact-form-container">
+                            <form id="contact-form" class="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" class="form-control" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-text">
+                    &copy; <span id="current-year"></span> Ahmad Wijaya. Made with <i class="fas fa-heart heart"></i> in Dubai
+                </div>
+                <div class="footer-links">
+                    <a href="#intro">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="scripts/anime.es.js" type="module"></script>
+    <script src="scripts/config.js" type="module"></script>
+    <script src="scripts/main.js" type="module"></script>
+</body>
+</html>
