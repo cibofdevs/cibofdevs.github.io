@@ -1,5 +1,5 @@
 const config = {
-    EMAILJS_PUBLIC_KEY: 'your_public_key',
-    EMAILJS_SERVICE_ID: 'your_service_id',
-    EMAILJS_TEMPLATE_ID: 'your_template_id'
+    EMAILJS_PUBLIC_KEY: '$EMAILJS_PUBLIC_KEY',
+    EMAILJS_SERVICE_ID: '$EMAILJS_SERVICE_ID',
+    EMAILJS_TEMPLATE_ID: '$EMAILJS_TEMPLATE_ID'
 };
