@@ -4,10 +4,9 @@ import config from './config.js';
 // Initialize typed.js
 const typed = new Typed('#typewriter-text', {
     strings: [
+        'Software Engineer',
         'Backend Developer',
-        'Java Specialist',
-        'Cloud Engineer',
-        'Problem Solver'
+        'Cloud Engineer'
     ],
     typeSpeed: 50,
     backSpeed: 30,
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function animate(containerId) {
         const animateClass = `animate-${containerId}`;
         const elements = document.getElementsByClassName(animateClass);
-        
+
         anime({
             targets: elements,
             opacity: [0, 1],
@@ -65,18 +64,24 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
 
+    // Navbar toggler animation
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    navbarToggler.addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
+
     // Experience timeline toggle
     const showMoreBtn = document.getElementById('showMore');
     const previousPositions = document.querySelector('.previous-positions');
-    
+
     if (showMoreBtn && previousPositions) {
         // Set initial state
         previousPositions.style.display = 'none';
         previousPositions.style.opacity = '0';
-        
+
         showMoreBtn.addEventListener('click', function() {
             console.log('Button clicked');
-            
+
             if (previousPositions.style.display === 'none' || previousPositions.style.display === '') {
                 previousPositions.style.display = 'block';
                 setTimeout(() => {
@@ -119,6 +124,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', setActiveLink);
 
+    // Menutup navbar saat link diklik di mobile
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarToggler.classList.contains('active')) {
+                navbarToggler.classList.remove('active');
+                // Collapse navbar
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+            }
+        });
+    });
+
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -135,15 +153,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Contact form handler
     const contactForm = document.getElementById('contact-form');
-    const submitButton = contactForm.querySelector('button[type="submit"]');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const submitButton = contactForm.querySelector('button[type="submit"]');
             submitButton.disabled = true;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            
+
             try {
                 const templateParams = {
                     from_name: document.getElementById('name').value,
@@ -152,13 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     message: document.getElementById('message').value,
                     to_email: 'cibofdev@gmail.com'
                 };
-    
+
                 await emailjs.send(
                     config.EMAILJS_SERVICE_ID,
                     config.EMAILJS_TEMPLATE_ID,
                     templateParams
                 );
-                
+
                 alert('Thank you for your message! I will get back to you soon.');
                 contactForm.reset();
             } catch (error) {
