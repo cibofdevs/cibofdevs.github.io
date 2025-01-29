@@ -15,19 +15,17 @@ jobs:
       - name: Create scripts directory
         run: mkdir -p scripts
 
-      - name: Install and Build 🔧
+      - name: Generate config.js 🔧
+        run: |
+          echo "const config = {" > scripts/config.js
+          echo "  EMAILJS_PUBLIC_KEY: '${EMAILJS_PUBLIC_KEY}'," >> scripts/config.js
+          echo "  EMAILJS_SERVICE_ID: '${EMAILJS_SERVICE_ID}'," >> scripts/config.js
+          echo "  EMAILJS_TEMPLATE_ID: '${EMAILJS_TEMPLATE_ID}'" >> scripts/config.js
+          echo "};" >> scripts/config.js
         env:
           EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
           EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
           EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
-        run: |
-          cat > scripts/config.js << 'EOL'
-          const config = {
-            EMAILJS_PUBLIC_KEY: "${{ secrets.EMAILJS_PUBLIC_KEY }}",
-            EMAILJS_SERVICE_ID: "${{ secrets.EMAILJS_SERVICE_ID }}",
-            EMAILJS_TEMPLATE_ID: "${{ secrets.EMAILJS_TEMPLATE_ID }}"
-          };
-          EOL
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
