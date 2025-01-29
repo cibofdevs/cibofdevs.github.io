@@ -27,8 +27,32 @@ body {
     color: var(--dark-color);
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
+    background-attachment: fixed; /* This is crucial to prevent the white flash */
     animation: gradientBG 15s ease infinite;
     overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+}
+
+/* Ensure the gradient covers the entire viewport */
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 @keyframes gradientBG {
