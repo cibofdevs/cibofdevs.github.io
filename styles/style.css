@@ -786,15 +786,18 @@ a:hover {
     transition: transform var(--transition-fast);
 }
 
-/* Navbar Toggle Icon dengan animasi yang ditingkatkan */
+/* Hamburger Menu Styles */
 .navbar-toggler {
     border: none;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
+    padding: 0.5rem;
     background: transparent;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-toggler:focus {
@@ -802,19 +805,13 @@ a:hover {
     box-shadow: none;
 }
 
-.navbar-toggler:hover {
-    transform: scale(1.1);
-}
-
 .navbar-toggler-icon {
-    background-image: none !important;
-    background-color: transparent;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    display: block;
+    background: white;
     width: 24px;
     height: 2px;
-    margin: 5px auto;
+    position: relative;
+    margin: 0;
+    transition: all 0.3s ease;
 }
 
 .navbar-toggler-icon::before,
@@ -823,45 +820,39 @@ a:hover {
     position: absolute;
     width: 24px;
     height: 2px;
-    background-color: var(--light-color);
-    border-radius: 4px;
-    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    background: white;
+    left: 0;
+    transition: all 0.3s ease;
 }
 
 .navbar-toggler-icon::before {
-    transform: translateY(-8px);
+    top: -8px;
 }
 
 .navbar-toggler-icon::after {
-    transform: translateY(8px);
+    top: 8px;
 }
 
-/* Animasi ketika aktif */
-.navbar-toggler.active {
-    transform: rotate(180deg);
+/* Hover effect - only valid when NOT active */
+.navbar-toggler:not(.active):hover .navbar-toggler-icon,
+.navbar-toggler:not(.active):hover .navbar-toggler-icon::before,
+.navbar-toggler:not(.active):hover .navbar-toggler-icon::after {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
 }
 
+/* Active state styling */
 .navbar-toggler.active .navbar-toggler-icon {
-    background-color: transparent;
+    background: transparent;
 }
 
 .navbar-toggler.active .navbar-toggler-icon::before {
-    transform: rotate(45deg) translate(0, 0);
+    transform: rotate(45deg);
+    top: 0;
     background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
 }
 
 .navbar-toggler.active .navbar-toggler-icon::after {
-    transform: rotate(-45deg) translate(0, 0);
-    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-}
-
-/* Hover effects */
-.navbar-toggler:not(.active):hover .navbar-toggler-icon::before {
-    transform: translateY(-10px);
-    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-}
-
-.navbar-toggler:not(.active):hover .navbar-toggler-icon::after {
-    transform: translateY(10px);
+    transform: rotate(-45deg);
+    top: 0;
     background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
 }
