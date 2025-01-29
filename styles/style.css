@@ -460,8 +460,61 @@ a:hover {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-    border: 3px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg,
+    #00f2fe,
+    #4facfe
+    );
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(79, 172, 254, 0.5),
+    inset 0 0 6px rgba(0, 242, 254, 0.3);
+    animation: dotPulse 2s infinite ease-in-out;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+    background: linear-gradient(135deg,
+    #4facfe,
+    #00f2fe
+    );
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.7),
+    inset 0 0 8px rgba(0, 242, 254, 0.5);
+}
+
+@keyframes dotPulse {
+    0% {
+        box-shadow: 0 0 10px rgba(79, 172, 254, 0.5),
+        inset 0 0 6px rgba(0, 242, 254, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(79, 172, 254, 0.7),
+        inset 0 0 8px rgba(0, 242, 254, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(79, 172, 254, 0.5),
+        inset 0 0 6px rgba(0, 242, 254, 0.3);
+    }
+}
+
+.timeline-item.current .timeline-dot {
+    background: linear-gradient(135deg,
+    #FFD700,
+    #FFA500
+    );
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.6),
+    inset 0 0 8px rgba(255, 165, 0, 0.4);
+}
+
+.timeline-item.current:hover .timeline-dot {
+    background: linear-gradient(135deg,
+    #FFA500,
+    #FFD700
+    );
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.8),
+    inset 0 0 10px rgba(255, 165, 0, 0.6);
 }
 
 .timeline-header {
@@ -689,15 +742,53 @@ a:hover {
     opacity: 0.9;
 }
 
+/* Footer heart icon styles */
 .heart {
-    color: rgba(255, 77, 77, 0.9);
-    animation: heartbeat 1.5s infinite;
+    background: linear-gradient(45deg,
+    #ff6b6b,
+    #ff4757,
+    #ff7979,
+    #ff4d4d
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientBG 8s ease infinite, heartbeat 1.5s infinite;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+    font-size: 1.1em;
+}
+
+.heart:hover {
+    animation: gradientBG 2s ease infinite, heartHover 0.6s infinite;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 2px rgba(255, 107, 107, 0.5));
+}
+
+@keyframes heartHover {
+    0% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1.4) rotate(5deg);
+    }
+    100% {
+        transform: scale(1.2);
+    }
 }
 
 @keyframes heartbeat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Media Queries */
