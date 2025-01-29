@@ -14,13 +14,15 @@ jobs:
 
       - name: Create config file 🔧
         run: |
-          cat > scripts/config.js << EOL
-          window.config = {
+          cat > scripts/config.js << 'EOF'
+          const config = {
             EMAILJS_PUBLIC_KEY: "${{ secrets.EMAILJS_PUBLIC_KEY }}",
             EMAILJS_SERVICE_ID: "${{ secrets.EMAILJS_SERVICE_ID }}",
             EMAILJS_TEMPLATE_ID: "${{ secrets.EMAILJS_TEMPLATE_ID }}"
           };
-          EOL
+          
+          export default config;
+          EOF
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
