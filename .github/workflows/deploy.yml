@@ -12,23 +12,18 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Create scripts directory
-        run: mkdir -p scripts
-
-      - name: Generate config.js 🔧
+      - name: Create config file 🔧
         run: |
-          echo "const config = {" > scripts/config.js
-          echo "  EMAILJS_PUBLIC_KEY: '${EMAILJS_PUBLIC_KEY}'," >> scripts/config.js
-          echo "  EMAILJS_SERVICE_ID: '${EMAILJS_SERVICE_ID}'," >> scripts/config.js
-          echo "  EMAILJS_TEMPLATE_ID: '${EMAILJS_TEMPLATE_ID}'" >> scripts/config.js
-          echo "};" >> scripts/config.js
-        env:
-          EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
-          EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
-          EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
+          cat > scripts/config.js << EOL
+          window.config = {
+            EMAILJS_PUBLIC_KEY: "${{ secrets.EMAILJS_PUBLIC_KEY }}",
+            EMAILJS_SERVICE_ID: "${{ secrets.EMAILJS_SERVICE_ID }}",
+            EMAILJS_TEMPLATE_ID: "${{ secrets.EMAILJS_TEMPLATE_ID }}"
+          };
+          EOL
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: . # The folder the action should deploy
-          branch: gh-pages # The branch the action should deploy to
+          folder: .
+          branch: gh-pages
