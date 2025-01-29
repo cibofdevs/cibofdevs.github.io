@@ -12,17 +12,22 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - name: Create scripts directory
+        run: mkdir -p scripts
+
       - name: Install and Build 🔧
         env:
           EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
           EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
           EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
         run: |
-          echo "const config = {
-            EMAILJS_PUBLIC_KEY: '$EMAILJS_PUBLIC_KEY',
-            EMAILJS_SERVICE_ID: '$EMAILJS_SERVICE_ID',
-            EMAILJS_TEMPLATE_ID: '$EMAILJS_TEMPLATE_ID'
-          };" > scripts/config.js
+          cat > scripts/config.js << 'EOL'
+          const config = {
+            EMAILJS_PUBLIC_KEY: "${{ secrets.EMAILJS_PUBLIC_KEY }}",
+            EMAILJS_SERVICE_ID: "${{ secrets.EMAILJS_SERVICE_ID }}",
+            EMAILJS_TEMPLATE_ID: "${{ secrets.EMAILJS_TEMPLATE_ID }}"
+          };
+          EOL
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
