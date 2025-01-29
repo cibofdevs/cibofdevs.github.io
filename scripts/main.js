@@ -1,4 +1,5 @@
 import anime from './anime.es.js';
+import config from './config.js';
 
 // Initialize typed.js
 const typed = new Typed('#typewriter-text', {
@@ -139,33 +140,31 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // Disable submit button and show loading state
+            const submitButton = contactForm.querySelector('button[type="submit"]');
             submitButton.disabled = true;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             
-            const templateParams = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
-                to_email: 'cibofdev@gmail.com'
-            };
-
             try {
+                const templateParams = {
+                    from_name: document.getElementById('name').value,
+                    from_email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value,
+                    to_email: 'cibofdev@gmail.com'
+                };
+    
                 await emailjs.send(
                     config.EMAILJS_SERVICE_ID,
                     config.EMAILJS_TEMPLATE_ID,
                     templateParams
                 );
                 
-                // Show success message
                 alert('Thank you for your message! I will get back to you soon.');
                 contactForm.reset();
             } catch (error) {
                 console.error('Error sending email:', error);
                 alert('Sorry, there was an error sending your message. Please try again later.');
             } finally {
-                // Re-enable submit button and restore original text
                 submitButton.disabled = false;
                 submitButton.innerHTML = 'Send Message';
             }
