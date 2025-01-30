@@ -303,7 +303,7 @@ a:hover {
 
 .tech-icons i:hover {
     transform: translateY(-3px);
-    color: var(--gradient-end);
+    color: var(--light-color);
 }
 
 .floating-image {
@@ -574,7 +574,7 @@ a:hover {
     content: "→";
     position: absolute;
     left: 0;
-    color: var(--gradient-end);
+    color: var(--light-color);
 }
 
 .tech-tags {
@@ -673,11 +673,106 @@ a:hover {
     border-radius: 50%;
     font-size: 1.2rem;
     transition: all var(--transition-fast);
+    color: var(--light-color);
+}
+
+/* Medium */
+.social-icon .fa-medium {
+    background: linear-gradient(135deg, #12100E, #000000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-icon:hover .fa-medium {
+    background: linear-gradient(135deg, #000000, #12100E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Twitter/X */
+.social-icon .fa-x-twitter {
+    background: linear-gradient(135deg, #000000, #14171A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-icon:hover .fa-x-twitter {
+    background: linear-gradient(135deg, #14171A, #000000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Instagram */
+.social-icon .fa-instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-icon:hover .fa-instagram {
+    background: linear-gradient(45deg, #FFDC80, #FCAF45, #F77737, #F56040, #FD1D1D, #E1306C, #C13584, #833AB4, #5851DB, #405DE6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Email Icon */
+.contact-card .fa-envelope {
+    background: linear-gradient(135deg, #EA4335, #C5221F);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-card:hover .fa-envelope {
+    background: linear-gradient(135deg, #C5221F, #EA4335);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1);
+}
+
+/* LinkedIn Icon */
+.contact-card .fa-linkedin {
+    background: linear-gradient(135deg, #0A66C2, #0077B5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-card:hover .fa-linkedin {
+    background: linear-gradient(135deg, #0077B5, #0A66C2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1);
+}
+
+/* GitHub Icon */
+.contact-card .fa-github {
+    background: linear-gradient(135deg, #333333, #24292E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-card:hover .fa-github {
+    background: linear-gradient(135deg, #24292E, #333333);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1);
 }
 
 .social-icon:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .contact-form-container {
@@ -758,10 +853,10 @@ a:hover {
 /* Footer heart icon styles */
 .heart {
     background: linear-gradient(45deg,
-    #ff6b6b,
-    #ff4757,
-    #ff7979,
-    #ff4d4d
+    #8B0000,    /* Dark Red */
+    #B22222,    /* Fire Brick */
+    #DC143C,    /* Crimson */
+    #800000     /* Maroon */
     );
     background-size: 300% 300%;
     -webkit-background-clip: text;
@@ -770,8 +865,9 @@ a:hover {
     animation: gradientBG 8s ease infinite, heartbeat 1.5s infinite;
     display: inline-block;
     transition: transform 0.3s ease;
-    text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
     font-size: 1.1em;
+    filter: brightness(1.2) saturate(1.1);
 }
 
 .heart:hover {
@@ -958,7 +1054,7 @@ a:hover {
 .navbar-toggler {
     border: none;
     padding: 0.5rem;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
     cursor: pointer;
     width: 40px;
     height: 40px;
@@ -966,6 +1062,10 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all var(--transition-fast);
 }
 
 .navbar-toggler:focus {
