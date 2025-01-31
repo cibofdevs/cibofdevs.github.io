@@ -962,6 +962,10 @@ a:hover {
     .footer-links {
         justify-content: center;
     }
+
+    .navbar-toggler {
+        margin-right: 0.5rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1053,28 +1057,36 @@ a:hover {
 /* Hamburger Menu Styles */
 .navbar-toggler {
     border: none;
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.15); /* Subtle white background */
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 12px; /* More rounded corners */
+    transition: all var(--transition-fast);
+    position: relative;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    transition: all var(--transition-fast);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler:hover {
+    background: rgba(255, 255, 255, 0.25); /* More visible on hover */
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .navbar-toggler:focus {
     outline: none;
-    box-shadow: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
 .navbar-toggler-icon {
-    background: white;
+    background: var(--gradient-start); /* Using gradient color for icon */
     width: 24px;
     height: 2px;
     position: relative;
@@ -1088,7 +1100,7 @@ a:hover {
     position: absolute;
     width: 24px;
     height: 2px;
-    background: white;
+    background: var(--gradient-start); /* Matching gradient color */
     left: 0;
     transition: all 0.3s ease;
 }
@@ -1101,11 +1113,18 @@ a:hover {
     top: 8px;
 }
 
+/* Hover effect for the icon */
+.navbar-toggler:hover .navbar-toggler-icon,
+.navbar-toggler:hover .navbar-toggler-icon::before,
+.navbar-toggler:hover .navbar-toggler-icon::after {
+    background: var(--gradient-end); /* Change color on hover */
+}
+
 /* Hover effect - only valid when NOT active */
 .navbar-toggler:not(.active):hover .navbar-toggler-icon,
 .navbar-toggler:not(.active):hover .navbar-toggler-icon::before,
 .navbar-toggler:not(.active):hover .navbar-toggler-icon::after {
-    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    background: var(--gradient-start); /* Changed to use single gradient color */
 }
 
 /* Active state styling */
@@ -1116,11 +1135,11 @@ a:hover {
 .navbar-toggler.active .navbar-toggler-icon::before {
     transform: rotate(45deg);
     top: 0;
-    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    background: var(--gradient-end);
 }
 
 .navbar-toggler.active .navbar-toggler-icon::after {
     transform: rotate(-45deg);
     top: 0;
-    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    background: var(--gradient-end);
 }

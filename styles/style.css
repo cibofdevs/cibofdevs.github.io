@@ -1058,7 +1058,7 @@ a:hover {
 .navbar-toggler {
     border: none;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.15); /* Subtle white background */
+    background: rgba(255, 255, 255, 0.08); /* Reduced opacity */
     cursor: pointer;
     width: 45px;
     height: 45px;
@@ -1066,12 +1066,13 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 12px; /* More rounded corners */
+    border-radius: 12px;
     transition: all var(--transition-fast);
     position: relative;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    -webkit-tap-highlight-color: transparent; /* Removes tap highlight on mobile */
 }
 
 .navbar-toggler:hover {
