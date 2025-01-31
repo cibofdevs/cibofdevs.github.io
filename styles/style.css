@@ -1058,7 +1058,7 @@ a:hover {
 .navbar-toggler {
     border: none;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.08); /* Reduced opacity */
+    background: rgba(255, 255, 255, 0.03); /* Significantly reduced opacity */
     cursor: pointer;
     width: 45px;
     height: 45px;
@@ -1069,13 +1069,31 @@ a:hover {
     border-radius: 12px;
     transition: all var(--transition-fast);
     position: relative;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: none;
     /* Added support for mobile devices */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+}
+
+/* Specific rules for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .navbar-toggler {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+}
+
+/* Additional rule for mobile Chrome and Safari */
+@media screen and (max-width: 768px) {
+    .navbar-toggler {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
 }
 
 .navbar-toggler:hover {
