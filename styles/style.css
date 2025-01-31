@@ -1058,7 +1058,7 @@ a:hover {
 .navbar-toggler {
     border: none;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.03); /* Significantly reduced opacity */
+    background-color: transparent !important;
     cursor: pointer;
     width: 45px;
     height: 45px;
@@ -1069,28 +1069,40 @@ a:hover {
     border-radius: 12px;
     transition: all var(--transition-fast);
     position: relative;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: none;
-    /* Added support for mobile devices */
+    mix-blend-mode: overlay;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
 
-/* Specific rules for iOS Safari */
+.navbar-toggler::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    pointer-events: none;
+}
+
+/* iOS specific rules */
 @supports (-webkit-touch-callout: none) {
-    .navbar-toggler {
-        background: rgba(255, 255, 255, 0.02);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
+    .navbar-toggler::before {
+        background: rgba(255, 255, 255, 0.01);
+        opacity: 0.1;
+        mix-blend-mode: soft-light;
     }
 }
 
-/* Additional rule for mobile Chrome and Safari */
+/* Specific rules for mobile devices */
 @media screen and (max-width: 768px) {
-    .navbar-toggler {
-        background: rgba(255, 255, 255, 0.02);
+    .navbar-toggler::before {
+        background: rgba(255, 255, 255, 0.01);
+        opacity: 0.1;
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
     }
