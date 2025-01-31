@@ -1072,7 +1072,10 @@ a:hover {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    -webkit-tap-highlight-color: transparent; /* Removes tap highlight on mobile */
+    /* Added support for mobile devices */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .navbar-toggler:hover {
