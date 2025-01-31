@@ -1058,7 +1058,7 @@ a:hover {
 .navbar-toggler {
     border: none;
     padding: 0.75rem;
-    background-color: transparent !important;
+    background: rgba(255, 255, 255, 0.15); /* Subtle white background */
     cursor: pointer;
     width: 45px;
     height: 45px;
@@ -1066,46 +1066,12 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 12px;
+    border-radius: 12px; /* More rounded corners */
     transition: all var(--transition-fast);
     position: relative;
-    mix-blend-mode: overlay;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.navbar-toggler::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.01);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    pointer-events: none;
-}
-
-/* iOS specific rules */
-@supports (-webkit-touch-callout: none) {
-    .navbar-toggler::before {
-        background: rgba(255, 255, 255, 0.01);
-        opacity: 0.1;
-        mix-blend-mode: soft-light;
-    }
-}
-
-/* Specific rules for mobile devices */
-@media screen and (max-width: 768px) {
-    .navbar-toggler::before {
-        background: rgba(255, 255, 255, 0.01);
-        opacity: 0.1;
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-    }
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-toggler:hover {
