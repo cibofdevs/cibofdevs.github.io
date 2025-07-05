@@ -5,8 +5,7 @@ import config from './config.js';
 const typed = new Typed('#typewriter-text', {
     strings: [
         'Software Engineer',
-        'Backend Developer',
-        'Cloud Engineer'
+        'Full Stack Developer'
     ],
     typeSpeed: 50,
     backSpeed: 30,
@@ -124,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', setActiveLink);
 
-    // Menutup navbar saat link diklik di mobile
+    // Close the navbar when a link is clicked on mobile
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navbarToggler.classList.contains('active')) {

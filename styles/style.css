@@ -723,14 +723,14 @@ a:hover {
 
 /* Email Icon */
 .contact-card .fa-envelope {
-    background: linear-gradient(135deg, #EA4335, #C5221F);
+    background: linear-gradient(135deg, #0A66C2, #0077B5);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .contact-card:hover .fa-envelope {
-    background: linear-gradient(135deg, #C5221F, #EA4335);
+    background: linear-gradient(135deg, #0077B5, #0A66C2);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
