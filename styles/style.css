@@ -635,20 +635,27 @@ a:hover {
 /* Domain cards — compact */
 .domain-card {
   background: rgba(13, 31, 60, 0.8);
-  padding: 1.25rem 1rem;
+  padding: 1.25rem 0.75rem;
   border-radius: 10px;
   text-align: center;
   transition: all var(--transition-fast);
   border: 1px solid rgba(0, 245, 255, 0.1);
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .domain-card h4 {
   margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: clamp(0.72rem, 1.2vw, 0.9rem);
+  line-height: 1.35;
   font-weight: 600;
   color: var(--light-color);
+  word-break: break-word;
+  hyphens: auto;
+  max-width: 100%;
 }
 
 .domain-card:hover {
@@ -659,8 +666,8 @@ a:hover {
 }
 
 .domain-card i {
-  font-size: 1.75rem;
-  margin-bottom: 0.6rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+  margin-bottom: 0.5rem;
   background: linear-gradient(
     to right,
     var(--gradient-start),
@@ -670,6 +677,7 @@ a:hover {
   -webkit-text-fill-color: transparent;
   display: block;
   filter: drop-shadow(0 0 6px var(--glow-cyan));
+  flex-shrink: 0;
 }
 
 /* Skill groups */
@@ -731,6 +739,22 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0;
+  height: 100%;
+}
+
+/* Equal height wrapper for Projects & Certs row */
+.about-equal-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-equal-row > [class*="col"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-equal-row .about-list-card {
+  flex: 1;
 }
 
 .about-list-item {
@@ -1178,25 +1202,39 @@ a:hover {
 .form-control {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: rgba(5, 10, 20, 0.8);
+  background: rgba(5, 10, 20, 0.8) !important;
   border: 1px solid rgba(0, 245, 255, 0.15);
   border-radius: 6px;
-  color: var(--light-color);
+  color: #e2e8f0 !important;
   transition: all var(--transition-fast);
   font-family: var(--font-primary);
+  -webkit-text-fill-color: #e2e8f0 !important;
+  caret-color: var(--primary-color);
 }
 
 .form-control::placeholder {
-  color: rgba(226, 232, 240, 0.3);
+  color: rgba(226, 232, 240, 0.3) !important;
+  -webkit-text-fill-color: rgba(226, 232, 240, 0.3) !important;
 }
 
 .form-control:focus {
   outline: none;
-  background: rgba(0, 245, 255, 0.03);
+  background: rgba(5, 10, 20, 0.9) !important;
   border-color: var(--primary-color);
   box-shadow:
     0 0 0 3px rgba(0, 245, 255, 0.08),
     0 0 15px rgba(0, 245, 255, 0.1);
+  color: #e2e8f0 !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+
+/* Override browser autofill background darkening */
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover,
+.form-control:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgba(5, 10, 20, 0.95) inset;
+  -webkit-text-fill-color: #e2e8f0 !important;
+  caret-color: var(--primary-color);
 }
 
 /* Footer */
