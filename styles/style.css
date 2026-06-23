@@ -1174,6 +1174,11 @@ a:hover {
   background-clip: unset;
 }
 
+.social-icon .kofi-svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+
 /* Contact Form */
 .contact-form-container {
   background: rgba(10, 22, 40, 0.7);
