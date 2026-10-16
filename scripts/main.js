@@ -13,7 +13,7 @@ const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.getElementById('main-navigation');
 const navigationPanel = document.getElementById('navigation-panel');
 const header = document.querySelector('.site-header');
-const mobileViewport = window.matchMedia('(max-width: 580px)');
+const mobileViewport = window.matchMedia('(max-width: 760px)');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 menuButton.hidden = false;
 
