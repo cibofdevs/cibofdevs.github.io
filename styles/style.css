@@ -14,6 +14,10 @@
   --line: #e0e3ee;
   --radius: 24px;
   --font: 'DM Sans',sans-serif;
+  --body-size: 15px;
+  --hero-size: clamp(40px,4.6vw,56px);
+  --section-size: clamp(30px,3vw,38px);
+  --card-title-size: clamp(21px,2vw,24px);
   --header-offset: 112px;
 }
 
@@ -66,6 +70,7 @@ h1,h2,h3,h4,p {
 
 h1,h2,h3,h4 {
   line-height: 1.2;
+  letter-spacing: -.03em;
 }
 
 button,input,textarea,a,summary {
@@ -208,6 +213,7 @@ button,input,textarea,a,summary {
 }
 
 .hero-intro {
+  background: radial-gradient(ellipse at top right,#eef0fc 0%,var(--surface) 65%);
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -273,9 +279,9 @@ button,input,textarea,a,summary {
 }
 
 .hero h1 {
-  font-size: clamp(36px,4.4vw,54px);
+  font-size: var(--hero-size);
   font-weight: 500;
-  letter-spacing: -2.7px;
+  letter-spacing: -.03em;
   line-height: 1.1;
   margin: 30px 0 23px;
 }
@@ -296,8 +302,8 @@ button,input,textarea,a,summary {
 .hero-description {
   max-width: 410px;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.85;
+  font-size: var(--body-size);
+  line-height: 1.75;
 }
 
 .hero-actions {
@@ -367,8 +373,9 @@ button,input,textarea,a,summary {
   position: relative;
   overflow: hidden;
   min-height: 430px;
-  border: 5px solid var(--lavender);
+  border: 5px solid transparent;
   background: var(--lavender);
+  background: linear-gradient(135deg,var(--lavender),var(--sage)) border-box;
 }
 
 .hero-profile>img {
@@ -436,7 +443,7 @@ button,input,textarea,a,summary {
   border-radius: 7px;
   background: var(--accent-soft);
   color: var(--accent);
-  font: 400 12px/1.6 'IBM Plex Mono',monospace;
+  font: 500 12px/1.6 var(--font);
 }
 
 @supports ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
@@ -449,7 +456,7 @@ button,input,textarea,a,summary {
 
 .profile-caption strong {
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -459,6 +466,8 @@ button,input,textarea,a,summary {
 }
 
 .profile-caption .profile-role {
+  font-size: 13px;
+  font-weight: 400;
   display: flex;
   align-items: baseline;
   gap: 8px;
@@ -593,16 +602,16 @@ button,input,textarea,a,summary {
 }
 
 .highlight-card h2 {
-  font-size: 23px;
+  font-size: var(--card-title-size);
   font-weight: 500;
-  letter-spacing: -.8px;
+  letter-spacing: -.03em;
   margin: 16px 0 12px;
 }
 
 .highlight-card p {
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: var(--body-size);
+  line-height: 1.75;
 }
 
 .highlight-card>a {
@@ -708,9 +717,9 @@ button,input,textarea,a,summary {
 }
 
 .section-heading h2 {
-  font-size: clamp(29px,3vw,38px);
+  font-size: var(--section-size);
   font-weight: 500;
-  letter-spacing: -1.5px;
+  letter-spacing: -.03em;
 }
 
 .section-note {
@@ -732,13 +741,13 @@ button,input,textarea,a,summary {
 .about-bio h3 {
   font-size: 24px;
   font-weight: 500;
-  letter-spacing: -.7px;
+  letter-spacing: -.03em;
   margin-bottom: 18px;
 }
 
 .about-bio p {
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--body-size);
 }
 
 .about-bio p+p {
@@ -760,9 +769,9 @@ button,input,textarea,a,summary {
 }
 
 .domains-card h3 {
-  font-size: 26px;
+  font-size: var(--card-title-size);
   font-weight: 500;
-  letter-spacing: -.8px;
+  letter-spacing: -.03em;
   margin-top: 18px;
 }
 
@@ -774,7 +783,7 @@ button,input,textarea,a,summary {
 
 .domains-card li {
   border-top: 1px solid #c9cfed;
-  font-size: 14px;
+  font-size: var(--body-size);
   padding: 9px 0;
   display: flex;
   align-items: center;
@@ -941,9 +950,9 @@ button,input,textarea,a,summary {
 }
 
 .project-card h3 {
-  font-size: 25px;
+  font-size: var(--card-title-size);
   font-weight: 500;
-  letter-spacing: -.8px;
+  letter-spacing: -.03em;
   margin-bottom: 14px;
 }
 
@@ -953,8 +962,8 @@ button,input,textarea,a,summary {
 
 .project-card p {
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.85;
+  font-size: var(--body-size);
+  line-height: 1.75;
   max-width: 720px;
   margin-bottom: 25px;
 }
@@ -1033,7 +1042,7 @@ button,input,textarea,a,summary {
 .experience-meta h3 {
   font-size: 22px;
   font-weight: 500;
-  letter-spacing: -.6px;
+  letter-spacing: -.03em;
   margin: 12px 0;
 }
 
@@ -1054,12 +1063,12 @@ button,input,textarea,a,summary {
 .experience-body h4 {
   font-size: 21px;
   font-weight: 500;
-  letter-spacing: -.6px;
+  letter-spacing: -.03em;
 }
 
 .company-description {
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--body-size);
   margin-top: 10px;
 }
 
@@ -1067,7 +1076,7 @@ button,input,textarea,a,summary {
   padding-left: 18px;
   margin: 20px 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--body-size);
 }
 
 .experience-body li {
@@ -1188,7 +1197,7 @@ button,input,textarea,a,summary {
 .certificate-content {
   padding-bottom: 24px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--body-size);
 }
 
 .certificate-content a {
@@ -1209,6 +1218,7 @@ button,input,textarea,a,summary {
   isolation: isolate;
   overflow: hidden;
   background: var(--accent);
+  background: linear-gradient(135deg,var(--accent),#5254df);
   color: white;
   padding: 38px;
   display: flex;
@@ -1268,12 +1278,12 @@ button,input,textarea,a,summary {
 }
 
 .contact-intro>.eyebrow {
-  color: #d2d8ff;
+  color: #eef0ff;
 }
 
 .contact-intro h2 {
-  font-size: 40px;
-  letter-spacing: -1.7px;
+  font-size: var(--section-size);
+  letter-spacing: -.03em;
   font-weight: 500;
   margin: 24px 0;
   line-height: 1.15;
@@ -1281,8 +1291,8 @@ button,input,textarea,a,summary {
 
 .contact-intro>p:not(.eyebrow) {
   color: #e2e6ff;
-  font-size: 14px;
-  line-height: 1.9;
+  font-size: var(--body-size);
+  line-height: 1.75;
 }
 
 .contact-email {
@@ -1326,7 +1336,7 @@ button,input,textarea,a,summary {
 }
 
 .social-links p {
-  color: #d2d8ff;
+  color: #eef0ff;
   font-size: 12px;
   margin-bottom: 10px;
 }
@@ -1345,7 +1355,7 @@ button,input,textarea,a,summary {
 .contact-form-panel h3 {
   font-size: 24px;
   font-weight: 500;
-  letter-spacing: -.8px;
+  letter-spacing: -.03em;
   margin-bottom: 26px;
 }
 
@@ -1457,8 +1467,8 @@ textarea {
     padding: 32px;
   }
   .hero h1 {
-    font-size: 42px;
-    letter-spacing: -2px;
+    font-size: var(--hero-size);
+    letter-spacing: -.03em;
   }
   .hero-actions {
     gap: 18px;
@@ -1470,7 +1480,7 @@ textarea {
     padding: 24px;
   }
   .highlight-card h2 {
-    font-size: 21px;
+    font-size: var(--card-title-size);
   }
   .experience-card {
     grid-template-columns: 190px minmax(0,1fr);
@@ -1481,7 +1491,7 @@ textarea {
     padding: 28px;
   }
   .contact-intro h2 {
-    font-size: 35px;
+    font-size: var(--section-size);
   }
   .form-row {
     grid-template-columns: 1fr;
@@ -1490,6 +1500,9 @@ textarea {
 }
 
 @media(max-width:760px) {
+  :root {
+    --body-size: 16px;
+  }
   .site-shell {
     width: calc(100% - 40px);
   }
@@ -1513,11 +1526,11 @@ textarea {
     padding: 28px 24px;
   }
   .hero h1 {
-    font-size: 35px;
-    letter-spacing: -1.8px;
+    font-size: var(--hero-size);
+    letter-spacing: -.03em;
   }
   .hero-description {
-    font-size: 14px;
+    font-size: var(--body-size);
   }
   .hero-profile {
     min-height: 400px;
@@ -1544,10 +1557,10 @@ textarea {
     padding: 20px;
   }
   .highlight-card h2 {
-    font-size: 19px;
+    font-size: var(--card-title-size);
   }
   .highlight-card p {
-    font-size: 13px;
+    font-size: var(--body-size);
   }
   .toolkit-strip {
     flex-wrap: wrap;
@@ -1619,7 +1632,7 @@ textarea {
     padding: 34px;
   }
   .contact-intro h2 {
-    font-size: 39px;
+    font-size: var(--section-size);
   }
   .contact-email {
     font-size: 22px;
@@ -1676,12 +1689,12 @@ textarea {
     padding: 30px 26px;
   }
   .hero h1 {
-    font-size: clamp(32px,8.6vw,47px);
-    letter-spacing: -1.8px;
+    font-size: var(--hero-size);
+    letter-spacing: -.03em;
     margin: 28px 0 22px;
   }
   .hero-description {
-    font-size: 14px;
+    font-size: var(--body-size);
   }
   .hero-actions {
     gap: 20px;
@@ -1715,11 +1728,11 @@ textarea {
     padding: 24px 26px;
   }
   .highlight-card h2 {
-    font-size: 23px;
+    font-size: var(--card-title-size);
     margin: 10px 0;
   }
   .highlight-card p {
-    font-size: 14px;
+    font-size: var(--body-size);
   }
   .toolkit-strip {
     padding: 24px;
@@ -1737,8 +1750,8 @@ textarea {
     margin-bottom: 22px;
   }
   .section-heading h2 {
-    font-size: 31px;
-    letter-spacing: -1.2px;
+    font-size: var(--section-size);
+    letter-spacing: -.03em;
   }
   .section-heading .eyebrow {
     font-size: 12px;
@@ -1748,13 +1761,13 @@ textarea {
     padding: 26px;
   }
   .about-bio p {
-    font-size: 14px;
+    font-size: var(--body-size);
   }
   .domains-card ul {
     grid-template-columns: 1fr;
   }
   .domains-card h3 {
-    font-size: 25px;
+    font-size: var(--card-title-size);
   }
   .skills-grid,.projects-grid {
     grid-template-columns: 1fr;
@@ -1769,7 +1782,7 @@ textarea {
     padding: 26px;
   }
   .project-card h3 {
-    font-size: 24px;
+    font-size: var(--card-title-size);
   }
   .project-card .eyebrow {
     font-size: 12px;
@@ -1781,7 +1794,7 @@ textarea {
     font-size: 21px;
   }
   .experience-body ul {
-    font-size: 14px;
+    font-size: var(--body-size);
   }
   .certificates {
     padding: 2px 24px;
@@ -1794,7 +1807,7 @@ textarea {
     padding: 28px 25px;
   }
   .contact-intro h2 {
-    font-size: 36px;
+    font-size: var(--section-size);
   }
   .contact-email {
     font-size: 19px;
