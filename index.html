@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v7.3.1/css/pro.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
     <script src="scripts/main.js" type="module"></script>
@@ -23,15 +24,15 @@
     <a class="skip-link" href="#intro">Skip to content</a>
     <div class="site-shell">
       <header class="site-header">
-        <a class="brand" href="#intro" aria-label="cibofdevs home">cibofdevs<span aria-hidden="true">✳</span></a>
-        <button class="menu-toggle" type="button" aria-controls="navigation-panel" aria-expanded="false" hidden>Menu <span aria-hidden="true">☰</span></button>
+        <a class="brand" href="#intro" aria-label="cibofdevs home">cibofdevs<i class="fa-regular fa-asterisk ui-icon brand-mark" aria-hidden="true"></i></a>
+        <button class="menu-toggle" type="button" aria-controls="navigation-panel" aria-expanded="false" hidden>Menu <i class="fa-regular fa-bars ui-icon" aria-hidden="true"></i></button>
         <div id="navigation-panel" class="navigation-panel">
           <div class="navigation-inner">
             <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
               <a href="#about">About me</a>
               <a href="#projects">Projects</a>
               <a href="#experience">Experience</a>
-              <a class="nav-contact" href="#contact">Say hello <span aria-hidden="true">↗</span></a>
+              <a class="nav-contact" href="#contact">Say hello <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
             </nav>
           </div>
         </div>
@@ -39,19 +40,23 @@
       <main>
         <section id="intro" class="hero section-anchor" aria-labelledby="hero-title">
           <div class="hero-intro panel">
-            <p class="greeting">Hi, I&#x27;m Ahmad <span aria-hidden="true">👋</span></p>
+            <span class="hero-orbit" aria-hidden="true"><span></span></span>
+            <p class="greeting">Hi, I&#x27;m Ahmad <span class="wave-hand" aria-hidden="true">👋</span></p>
             <h1 id="hero-title">Complex systems.<br><span>Human impact.</span></h1>
             <p class="hero-description">A Software Engineer building scalable backend services, payment integrations, and cloud infrastructure.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#experience">My experience <span aria-hidden="true">↗</span></a>
+              <a class="button button-primary" href="#experience">My experience <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
               <a class="text-link" href="#about">A bit about me</a>
             </div>
           </div>
           <div class="hero-profile panel">
-            <img src="assets/avatar.jpeg" alt="Ahmad Wijaya" width="1254" height="1254" fetchpriority="high">
+            <img src="assets/avatar.jpeg" alt="Ahmad Wijaya" width="1254" height="1254" fetchpriority="high" draggable="false">
             <div class="profile-caption">
-              <strong>Ahmad Wijaya</strong>
-              <span>Software Engineer · @cibofdevs</span>
+              <div class="profile-identity">
+                <strong>Ahmad Wijaya</strong>
+                <span class="profile-role"><i class="fa-regular fa-laptop-code ui-icon" aria-hidden="true"></i> Software Engineer</span>
+              </div>
+              <span class="profile-handle">@cibofdevs</span>
             </div>
           </div>
         </section>
@@ -60,30 +65,33 @@
             <span class="eyebrow">What I build</span>
             <h2>Reliable backends.</h2>
             <p>Microservices and APIs that turn complex needs into scalable systems.</p>
+            <span class="highlight-motif motif-arches" aria-hidden="true"></span>
           </article>
           <article class="highlight-card sage">
             <span class="eyebrow">Current chapter</span>
             <h2>Engineering at PAYOK.</h2>
             <p>Backend Developer working on payments. Based in Dubai, UAE.</p>
-            <a href="#experience" aria-label="Explore my experience at PAYOK">Explore experience <span aria-hidden="true">↗</span></a>
+            <a href="#experience" aria-label="Explore my experience at PAYOK">Explore experience <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
+            <span class="highlight-motif motif-petals" aria-hidden="true"></span>
           </article>
           <article class="highlight-card butter">
             <span class="eyebrow">Beyond the code</span>
             <h2>Cloud-native thinking.</h2>
             <p>Infrastructure designed for reliability, automation, and growth.</p>
+            <span class="highlight-motif motif-steps" aria-hidden="true"></span>
           </article>
         </div>
         <div class="toolkit-strip panel">
           <span class="eyebrow">My everyday toolkit</span>
           <div class="skill-tags">
-            <span>Java</span>
-            <span>Go</span>
-            <span>Python</span>
-            <span>AWS</span>
-            <span>Kubernetes</span>
+            <span role="img" aria-label="Java" title="Java"><i class="fa-brands fa-java ui-icon" aria-hidden="true"></i></span>
+            <span role="img" aria-label="Go" title="Go"><i class="fa-brands fa-golang ui-icon" aria-hidden="true"></i></span>
+            <span role="img" aria-label="Python" title="Python"><i class="fa-brands fa-python ui-icon" aria-hidden="true"></i></span>
+            <span role="img" aria-label="AWS" title="AWS"><i class="fa-brands fa-aws ui-icon" aria-hidden="true"></i></span>
+            <span role="img" aria-label="Kubernetes" title="Kubernetes"><i class="fa-brands fa-kubernetes ui-icon" aria-hidden="true"></i></span>
           </div>
         </div>
-        <a class="conversation-strip" href="#contact"><span>Good things start with a conversation.</span><span>Say hello <span aria-hidden="true">↗</span></span></a>
+        <a class="conversation-strip" href="#contact"><span>Good things start with a conversation.</span><span>Say hello <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></span></a>
         <section id="about" class="content-section section-anchor" aria-labelledby="about-title">
           <div class="section-heading">
             <div>
@@ -102,17 +110,17 @@
               <p class="eyebrow">Domains I&#x27;ve worked in</p>
               <h3>Different industries.<br>Same curiosity.</h3>
               <ul>
-                <li>Digital services</li>
-                <li>Telecommunications</li>
-                <li>Finance</li>
-                <li>Payment gateways</li>
+                <li><i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i> Digital services</li>
+                <li><i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i> Telecommunications</li>
+                <li><i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i> Finance</li>
+                <li><i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i> Payment gateways</li>
               </ul>
             </aside>
           </div>
           <h3 class="subsection-title">My engineering toolkit</h3>
           <div class="skills-grid">
             <article class="skill-group panel">
-              <h3>Languages</h3>
+              <h3><i class="fa-regular fa-code ui-icon" aria-hidden="true"></i> Languages</h3>
               <div class="skill-tags">
                 <span>Java</span>
                 <span>Golang</span>
@@ -123,7 +131,7 @@
               </div>
             </article>
             <article class="skill-group panel">
-              <h3>Frameworks</h3>
+              <h3><i class="fa-regular fa-layer-group ui-icon" aria-hidden="true"></i> Frameworks</h3>
               <div class="skill-tags">
                 <span>Spring Boot</span>
                 <span>Echo</span>
@@ -136,7 +144,7 @@
               </div>
             </article>
             <article class="skill-group panel">
-              <h3>Cloud &amp; Infra</h3>
+              <h3><i class="fa-regular fa-cloud ui-icon" aria-hidden="true"></i> Cloud &amp; Infra</h3>
               <div class="skill-tags">
                 <span>Linux</span>
                 <span>AWS</span>
@@ -150,7 +158,7 @@
               </div>
             </article>
             <article class="skill-group panel">
-              <h3>Databases</h3>
+              <h3><i class="fa-regular fa-database ui-icon" aria-hidden="true"></i> Databases</h3>
               <div class="skill-tags">
                 <span>MySQL</span>
                 <span>PostgreSQL</span>
@@ -160,7 +168,7 @@
               </div>
             </article>
             <article class="skill-group panel">
-              <h3>Messaging &amp; APIs</h3>
+              <h3><i class="fa-regular fa-diagram-project ui-icon" aria-hidden="true"></i> Messaging &amp; APIs</h3>
               <div class="skill-tags">
                 <span>Kafka</span>
                 <span>RabbitMQ</span>
@@ -173,7 +181,7 @@
               </div>
             </article>
             <article class="skill-group panel">
-              <h3>DevOps &amp; Tools</h3>
+              <h3><i class="fa-regular fa-gears ui-icon" aria-hidden="true"></i> DevOps &amp; Tools</h3>
               <div class="skill-tags">
                 <span>Jenkins</span>
                 <span>GitLab CI</span>
@@ -191,7 +199,7 @@
               <p class="eyebrow">From idea to something useful</p>
               <h2 id="projects-title">Things I&#x27;ve built.</h2>
             </div>
-            <a class="text-link" href="https://github.com/cibofdevs" target="_blank" rel="noopener noreferrer">More on GitHub <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://github.com/cibofdevs" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github ui-icon" aria-hidden="true"></i> More on GitHub</a>
           </div>
           <div class="projects-grid">
             <article class="project-card panel">
@@ -200,12 +208,12 @@
               </a>
               <div class="project-body">
                 <div class="project-top">
-                  <span class="eyebrow">Developer tools</span>
-                  <span aria-hidden="true" class="project-arrow">↗</span>
+                  <span class="eyebrow project-category"><i class="fa-regular fa-webhook ui-icon" aria-hidden="true"></i> Developer tools</span>
+                  <span class="project-arrow" aria-hidden="true"><i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></span>
                 </div>
                 <h3><a href="https://hookinspect.netlify.app" target="_blank" rel="noopener noreferrer">HookInspect</a></h3>
                 <p>A free, open-source webhook testing tool. Generate a unique URL, send HTTP requests to it, and inspect the full details — headers, body, query parameters — in real time.</p>
-                <a class="project-link" href="https://hookinspect.netlify.app" target="_blank" rel="noopener noreferrer">Explore project <span aria-hidden="true">↗</span></a>
+                <a class="project-link" href="https://hookinspect.netlify.app" target="_blank" rel="noopener noreferrer">Explore project <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
               </div>
             </article>
             <article class="project-card panel">
@@ -214,12 +222,12 @@
               </a>
               <div class="project-body">
                 <div class="project-top">
-                  <span class="eyebrow">API tooling</span>
-                  <span aria-hidden="true" class="project-arrow">↗</span>
+                  <span class="eyebrow project-category"><i class="fa-regular fa-server ui-icon" aria-hidden="true"></i> API tooling</span>
+                  <span class="project-arrow" aria-hidden="true"><i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></span>
                 </div>
                 <h3><a href="https://mockstack.netlify.app" target="_blank" rel="noopener noreferrer">MockStack</a></h3>
                 <p>MockStack is a self-hostable mocking tool for HTTP APIs. Define endpoints, simulate latency and failures, and watch every request land in a live monitor — all from one dashboard, deployed entirely on Netlify.</p>
-                <a class="project-link" href="https://mockstack.netlify.app" target="_blank" rel="noopener noreferrer">Explore project <span aria-hidden="true">↗</span></a>
+                <a class="project-link" href="https://mockstack.netlify.app" target="_blank" rel="noopener noreferrer">Explore project <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
               </div>
             </article>
             <article class="project-card panel">
@@ -228,12 +236,12 @@
               </a>
               <div class="project-body">
                 <div class="project-top">
-                  <span class="eyebrow">Developer plugin</span>
-                  <span aria-hidden="true" class="project-arrow">↗</span>
+                  <span class="eyebrow project-category"><i class="fa-regular fa-key ui-icon" aria-hidden="true"></i> Developer plugin</span>
+                  <span class="project-arrow" aria-hidden="true"><i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></span>
                 </div>
                 <h3><a href="https://yaak.app/plugins/@cibofdevs/payok-siggen" target="_blank" rel="noopener noreferrer">PAYOK Signature Generator</a></h3>
                 <p>Yaak plugin to generate PAYOK RSA-SHA256 digital signatures directly inside your requests.</p>
-                <a class="project-link" href="https://yaak.app/plugins/@cibofdevs/payok-siggen" target="_blank" rel="noopener noreferrer">Explore project <span aria-hidden="true">↗</span></a>
+                <a class="project-link" href="https://yaak.app/plugins/@cibofdevs/payok-siggen" target="_blank" rel="noopener noreferrer">Explore project <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
               </div>
             </article>
             <article class="project-card panel">
@@ -242,12 +250,12 @@
               </a>
               <div class="project-body">
                 <div class="project-top">
-                  <span class="eyebrow">Personal finance</span>
-                  <span aria-hidden="true" class="project-arrow">↗</span>
+                  <span class="eyebrow project-category"><i class="fa-regular fa-wallet ui-icon" aria-hidden="true"></i> Personal finance</span>
+                  <span class="project-arrow" aria-hidden="true"><i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></span>
                 </div>
                 <h3><a href="https://realexpense.netlify.app/app" target="_blank" rel="noopener noreferrer">Real Expense</a></h3>
                 <p>A modern and intuitive expense tracking application built with React, TypeScript, and Appwrite. Track your expenses, manage your budget, and gain insights into your spending habits with beautiful visualizations and a responsive UI.</p>
-                <a class="project-link" href="https://realexpense.netlify.app/app" target="_blank" rel="noopener noreferrer">Explore project <span aria-hidden="true">↗</span></a>
+                <a class="project-link" href="https://realexpense.netlify.app/app" target="_blank" rel="noopener noreferrer">Explore project <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
               </div>
             </article>
             <article class="project-card panel">
@@ -256,12 +264,12 @@
               </a>
               <div class="project-body">
                 <div class="project-top">
-                  <span class="eyebrow">Reading &amp; learning</span>
-                  <span aria-hidden="true" class="project-arrow">↗</span>
+                  <span class="eyebrow project-category"><i class="fa-regular fa-book-open ui-icon" aria-hidden="true"></i> Reading &amp; learning</span>
+                  <span class="project-arrow" aria-hidden="true"><i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></span>
                 </div>
                 <h3><a href="https://readquranonline.netlify.app" target="_blank" rel="noopener noreferrer">Read Quran Online</a></h3>
                 <p>Read the Quran online for free — Arabic text, English translation, verse-by-verse audio recitation, bookmarks, and search. Built with React, TypeScript &amp; Tailwind CSS.</p>
-                <a class="project-link" href="https://readquranonline.netlify.app" target="_blank" rel="noopener noreferrer">Explore project <span aria-hidden="true">↗</span></a>
+                <a class="project-link" href="https://readquranonline.netlify.app" target="_blank" rel="noopener noreferrer">Explore project <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
               </div>
             </article>
           </div>
@@ -270,7 +278,7 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">The journey so far</p>
-              <h2 id="experience-title">Experience that adds up.</h2>
+              <h2 id="experience-title" class="heading-with-icon"><i class="fa-regular fa-briefcase ui-icon" aria-hidden="true"></i> <span>Experience that adds up.</span></h2>
             </div>
             <span class="section-note">Building. Learning. Growing.</span>
           </div>
@@ -279,8 +287,8 @@
               <div class="experience-meta">
                 <span class="eyebrow">Current chapter</span>
                 <h3>PAYOK</h3>
-                <p>Sep 2024 – Present</p>
-                <span class="location">Dubai, UAE 🇦🇪</span>
+                <p class="experience-date"><i class="fa-regular fa-calendar-days ui-icon" aria-hidden="true"></i> Sep 2024 – Present</p>
+                <span class="location"><i class="fa-regular fa-location-dot ui-icon" aria-hidden="true"></i> Dubai, UAE</span>
               </div>
               <div class="experience-body">
                 <h4>Backend Developer</h4>
@@ -317,8 +325,8 @@
               <div class="experience-meta">
                 <span class="eyebrow">Previous chapter</span>
                 <h3>TIMWETECH</h3>
-                <p>Jun 2023 – Sep 2024</p>
-                <span class="location">Indonesia 🇮🇩</span>
+                <p class="experience-date"><i class="fa-regular fa-calendar-days ui-icon" aria-hidden="true"></i> Jun 2023 – Sep 2024</p>
+                <span class="location"><i class="fa-regular fa-location-dot ui-icon" aria-hidden="true"></i> Indonesia</span>
               </div>
               <div class="experience-body">
                 <h4>Technology Specialist</h4>
@@ -354,8 +362,8 @@
                   <div class="experience-meta">
                     <span class="eyebrow">Previous chapter</span>
                     <h3>PT. Alto Network</h3>
-                    <p>Sep 2022 – Jun 2023</p>
-                    <span class="location">Jakarta, Indonesia 🇮🇩</span>
+                    <p class="experience-date"><i class="fa-regular fa-calendar-days ui-icon" aria-hidden="true"></i> Sep 2022 – Jun 2023</p>
+                    <span class="location"><i class="fa-regular fa-location-dot ui-icon" aria-hidden="true"></i> Jakarta, Indonesia</span>
                   </div>
                   <div class="experience-body">
                     <h4>Backend Engineer</h4>
@@ -389,8 +397,8 @@
                   <div class="experience-meta">
                     <span class="eyebrow">Previous chapter</span>
                     <h3>PT. XL Axiata Tbk</h3>
-                    <p>Apr 2020 – Sep 2022</p>
-                    <span class="location">Jakarta, Indonesia 🇮🇩</span>
+                    <p class="experience-date"><i class="fa-regular fa-calendar-days ui-icon" aria-hidden="true"></i> Apr 2020 – Sep 2022</p>
+                    <span class="location"><i class="fa-regular fa-location-dot ui-icon" aria-hidden="true"></i> Jakarta, Indonesia</span>
                   </div>
                   <div class="experience-body">
                     <h4>API &amp; Microservices Developer</h4>
@@ -424,14 +432,14 @@
             </div>
           </div>
           <div class="experience-toggle">
-            <button class="button button-secondary" id="showMore" type="button" aria-controls="previous-positions" aria-expanded="true" hidden>Show previous positions <span aria-hidden="true">+</span></button>
+            <button class="button button-secondary" id="showMore" type="button" aria-controls="previous-positions" aria-expanded="true" hidden>Show previous positions <i class="fa-solid fa-plus ui-icon" aria-hidden="true"></i></button>
           </div>
         </section>
         <section class="content-section learning-section" aria-labelledby="learning-title">
           <div class="section-heading">
             <div>
               <p class="eyebrow">Always a work in progress</p>
-              <h2 id="learning-title">Still learning.</h2>
+              <h2 id="learning-title" class="heading-with-icon"><i class="fa-regular fa-award ui-icon" aria-hidden="true"></i> <span>Still learning.</span></h2>
             </div>
             <span class="section-note">Courses &amp; certifications</span>
           </div>
@@ -441,7 +449,7 @@
               <div class="disclosure-content">
                   <div class="certificate-content">
                                   <p>Learn Ansible DevOps + Automation with a Docker Captain! Latest Ansible (2024 v10.x) + Full Browser Lab Included!</p>
-                                  <a href="https://www.udemy.com/certificate/UC-fcd8d3b8-91bc-4a68-b7f2-4e0dbcefcf25" target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">↗</span></a>
+                                  <a href="https://www.udemy.com/certificate/UC-fcd8d3b8-91bc-4a68-b7f2-4e0dbcefcf25" target="_blank" rel="noopener noreferrer">View certificate <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
                                 </div>
               </div>
             </details>
@@ -450,7 +458,7 @@
               <div class="disclosure-content">
                   <div class="certificate-content">
                                   <p>Master GitOps, Blue-Green &amp; Canary deployments using Argo CD, Argo Rollouts, Helm, Prometheus, and the Gateway API</p>
-                                  <a href="https://www.udemy.com/certificate/UC-05697ffa-466f-4c84-9472-87e24fd3f75d" target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">↗</span></a>
+                                  <a href="https://www.udemy.com/certificate/UC-05697ffa-466f-4c84-9472-87e24fd3f75d" target="_blank" rel="noopener noreferrer">View certificate <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
                                 </div>
               </div>
             </details>
@@ -459,7 +467,7 @@
               <div class="disclosure-content">
                   <div class="certificate-content">
                                   <p>Learn Observability, Instrument REST APIs, Distributed Systems, Kubernetes, Learn Best-Practices for Production Systems!</p>
-                                  <a href="https://www.udemy.com/certificate/UC-3016c3cf-6478-4c03-b407-6a7ccad8846d" target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">↗</span></a>
+                                  <a href="https://www.udemy.com/certificate/UC-3016c3cf-6478-4c03-b407-6a7ccad8846d" target="_blank" rel="noopener noreferrer">View certificate <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
                                 </div>
               </div>
             </details>
@@ -468,7 +476,7 @@
               <div class="disclosure-content">
                   <div class="certificate-content">
                                   <p>Install, manage, create, and deploy Helm charts in Kubernetes clusters! Learn the Helm CLI, Hooks, Plugins and more!</p>
-                                  <a href="https://www.udemy.com/certificate/UC-1ae29ef3-21e9-49d3-bb27-2c31d355317f" target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">↗</span></a>
+                                  <a href="https://www.udemy.com/certificate/UC-1ae29ef3-21e9-49d3-bb27-2c31d355317f" target="_blank" rel="noopener noreferrer">View certificate <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
                                 </div>
               </div>
             </details>
@@ -477,7 +485,7 @@
               <div class="disclosure-content">
                   <div class="certificate-content">
                                   <p>35+ hours of content and 140+ hands-on labs to master working with Docker, Kubernetes, and Kustomize!</p>
-                                  <a href="https://www.udemy.com/certificate/UC-0342e8bc-b4e3-45b8-828b-ca73e81d34c6" target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">↗</span></a>
+                                  <a href="https://www.udemy.com/certificate/UC-0342e8bc-b4e3-45b8-828b-ca73e81d34c6" target="_blank" rel="noopener noreferrer">View certificate <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
                                 </div>
               </div>
             </details>
@@ -486,7 +494,7 @@
               <div class="disclosure-content">
                   <div class="certificate-content">
                                   <p>20+ hours, 60+ hands-on labs and 6 projects in AWS to master Terraform and Infrastructure as Code!</p>
-                                  <a href="https://www.udemy.com/certificate/UC-d9a5181c-5dcf-4bf0-be08-889e2ab78442" target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">↗</span></a>
+                                  <a href="https://www.udemy.com/certificate/UC-d9a5181c-5dcf-4bf0-be08-889e2ab78442" target="_blank" rel="noopener noreferrer">View certificate <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
                                 </div>
               </div>
             </details>
@@ -495,21 +503,22 @@
         <section id="contact" class="content-section section-anchor" aria-labelledby="contact-title">
           <div class="contact-grid">
             <div class="contact-intro panel">
+              <span class="connection-orbits" aria-hidden="true"><span class="connection-orbit-dot"></span></span>
               <p class="eyebrow">Let&#x27;s connect</p>
               <h2 id="contact-title">Something in mind?<br>Let&#x27;s talk.</h2>
               <p>I&#x27;m always open to discussing new projects, opportunities in software development, or tech in general.</p>
-              <a class="contact-email" href="mailto:cibofdev@gmail.com">cibofdev@gmail.com <span aria-hidden="true">↗</span></a>
+              <a class="contact-email" href="mailto:cibofdev@gmail.com">cibofdev@gmail.com <i class="fa-regular fa-arrow-up-right ui-icon" aria-hidden="true"></i></a>
               <div class="contact-networks">
-                <a href="https://www.linkedin.com/in/cibofdevs" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                <a href="https://github.com/cibofdevs" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/cibofdevs" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin ui-icon" aria-hidden="true"></i> LinkedIn</a>
+                <a href="https://github.com/cibofdevs" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github ui-icon" aria-hidden="true"></i> GitHub</a>
               </div>
               <div class="social-links">
                 <p>Elsewhere on the internet</p>
                 <div>
-                  <a href="https://medium.com/@cibofdevs" target="_blank" rel="noopener noreferrer">Medium</a>
-                  <a href="https://x.com/cibofdevs" target="_blank" rel="noopener noreferrer">X</a>
-                  <a href="https://www.instagram.com/cibofdevs" target="_blank" rel="noopener noreferrer">Instagram</a>
-                  <a href="https://ko-fi.com/cibofdevs" target="_blank" rel="noopener noreferrer">Ko-fi</a>
+                  <a href="https://medium.com/@cibofdevs" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-medium ui-icon" aria-hidden="true"></i> Medium</a>
+                  <a href="https://x.com/cibofdevs" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter ui-icon" aria-hidden="true"></i> X</a>
+                  <a href="https://www.instagram.com/cibofdevs" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram ui-icon" aria-hidden="true"></i> Instagram</a>
+                  <a href="https://ko-fi.com/cibofdevs" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-mug-hot ui-icon" aria-hidden="true"></i> Ko-fi</a>
                 </div>
               </div>
             </div>
@@ -534,7 +543,7 @@
                   <label for="message">Message</label>
                   <textarea id="message" name="message" rows="5" placeholder="Tell me a little about it…" maxlength="10000" required></textarea>
                 </div>
-                <button class="button button-primary" type="submit">Send message <span aria-hidden="true">↗</span></button>
+                <button class="button button-primary" type="submit">Send message <i class="fa-regular fa-paper-plane ui-icon" aria-hidden="true"></i></button>
                 <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
               </form>
               <noscript><p>Please email <a href="mailto:cibofdev@gmail.com">cibofdev@gmail.com</a> to get in touch.</p></noscript>
@@ -544,11 +553,11 @@
       </main>
       <footer class="site-footer">
         <div>
-          <a class="brand" href="#intro">cibofdevs<span aria-hidden="true">✳</span></a>
+          <a class="brand" href="#intro">cibofdevs<i class="fa-regular fa-asterisk ui-icon brand-mark" aria-hidden="true"></i></a>
           <p>Made with care. Built with purpose.</p>
         </div>
         <p>© <span id="current-year">2026</span> Ahmad Wijaya · Dubai</p>
-        <a href="#intro" class="back-top">Back to top <span aria-hidden="true">↑</span></a>
+        <a href="#intro" class="back-top">Back to top <i class="fa-regular fa-arrow-up ui-icon" aria-hidden="true"></i></a>
       </footer>
     </div>
   </body>

@@ -1,8 +1,13 @@
 import config from './config.js';
 import { createCollapsible, revealSections } from './motion.js';
+import anime from './anime.es.js';
 
 document.documentElement.classList.add('js');
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
+const profileImage = document.querySelector('.hero-profile>img');
+profileImage.addEventListener('contextmenu', event => event.preventDefault());
+profileImage.addEventListener('dragstart', event => event.preventDefault());
 
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.getElementById('main-navigation');
@@ -11,6 +16,43 @@ const header = document.querySelector('.site-header');
 const mobileViewport = window.matchMedia('(max-width: 580px)');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 menuButton.hidden = false;
+
+const greeting = document.querySelector('.greeting');
+const waveHand = greeting.querySelector('.wave-hand');
+const handWave = anime({
+  targets: waveHand,
+  autoplay: false,
+  loop: false,
+  delay: 250,
+  easing: 'easeInOutQuad',
+  keyframes: [
+    { rotate: 16, duration: 180 },
+    { rotate: -10, duration: 180 },
+    { rotate: 14, duration: 180 },
+    { rotate: -8, duration: 180 },
+    { rotate: 10, duration: 180 },
+    { rotate: 0, duration: 220 }
+  ]
+});
+
+function playHandWave() {
+  if (!reducedMotion.matches && !document.hidden && handWave.paused) handWave.restart();
+}
+
+function stopHandWave() {
+  handWave.pause();
+  waveHand.style.removeProperty('transform');
+}
+
+greeting.addEventListener('pointerenter', playHandWave);
+greeting.addEventListener('pointerdown', playHandWave);
+reducedMotion.addEventListener('change', () => {
+  if (reducedMotion.matches) stopHandWave();
+});
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) stopHandWave();
+});
+playHandWave();
 
 function updateHeaderOffset() {
   document.documentElement.style.setProperty('--header-offset', `${header.offsetHeight + 32}px`);
@@ -124,8 +166,8 @@ const previousMotion = createCollapsible(previousPositions, {
   onChange: expanded => {
     experienceButton.setAttribute('aria-expanded', String(expanded));
     experienceButton.innerHTML = expanded
-      ? 'Hide previous positions <span aria-hidden="true">−</span>'
-      : 'Show previous positions <span aria-hidden="true">+</span>';
+      ? 'Hide previous positions <i class="fa-solid fa-minus ui-icon" aria-hidden="true"></i>'
+      : 'Show previous positions <i class="fa-solid fa-plus ui-icon" aria-hidden="true"></i>';
   }
 });
 experienceButton.addEventListener('click', async () => {
@@ -169,7 +211,14 @@ const submitButton = contactForm.querySelector('button[type="submit"]');
 const idleButtonContent = submitButton.innerHTML;
 
 function showStatus(message, state) {
-  formStatus.textContent = message;
+  const icon = document.createElement('i');
+  icon.className = state === 'sending'
+    ? 'fa-regular fa-spinner fa-spin ui-icon status-spinner'
+    : `fa-regular fa-${state === 'success' ? 'circle-check' : 'circle-exclamation'} ui-icon`;
+  icon.setAttribute('aria-hidden', 'true');
+  const text = document.createElement('span');
+  text.textContent = message;
+  formStatus.replaceChildren(icon, text);
   formStatus.dataset.state = state;
 }
 
@@ -178,7 +227,7 @@ contactForm.addEventListener('submit', async event => {
   if (submitButton.disabled || !contactForm.reportValidity()) return;
   submitButton.disabled = true;
   contactForm.setAttribute('aria-busy', 'true');
-  submitButton.textContent = 'Sending…';
+  submitButton.innerHTML = 'Sending… <i class="fa-regular fa-spinner fa-spin ui-icon status-spinner" aria-hidden="true"></i>';
   showStatus('Sending your message…', 'sending');
   try {
     if (!window.emailjs) throw new Error('Email service unavailable');
