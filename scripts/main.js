@@ -17,6 +17,28 @@ const mobileViewport = window.matchMedia('(max-width: 760px)');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 menuButton.hidden = false;
 
+const backTop = document.querySelector('.back-top');
+const footer = document.querySelector('.site-footer');
+
+function updateBackTop(visible) {
+  backTop.classList.toggle('is-visible', visible);
+  backTop.inert = !visible;
+  backTop.setAttribute('aria-hidden', String(!visible));
+}
+
+updateBackTop(false);
+backTop.hidden = false;
+if ('IntersectionObserver' in window) {
+  new IntersectionObserver(([entry]) => updateBackTop(entry.isIntersecting), {
+    rootMargin: '0px 0px 180px 0px'
+  }).observe(footer);
+} else {
+  const checkFooter = () => updateBackTop(footer.getBoundingClientRect().top <= window.innerHeight + 180);
+  window.addEventListener('scroll', checkFooter, { passive: true });
+  window.addEventListener('resize', checkFooter);
+  checkFooter();
+}
+
 const greeting = document.querySelector('.greeting');
 const waveHand = greeting.querySelector('.wave-hand');
 const handWave = anime({

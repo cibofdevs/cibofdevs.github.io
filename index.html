@@ -186,17 +186,20 @@
             <span role="img" aria-label="Java" title="Java"
               ><i class="fa-brands fa-java ui-icon" aria-hidden="true"></i
             ></span>
-            <span role="img" aria-label="JavaScript" title="JavaScript"
-              ><i class="fa-brands fa-js ui-icon" aria-hidden="true"></i
-            ></span>
-            <span role="img" aria-label="ReactJS" title="ReactJS"
-              ><i class="fa-brands fa-react ui-icon" aria-hidden="true"></i
-            ></span>
             <span role="img" aria-label="Go" title="Go"
               ><i class="fa-brands fa-golang ui-icon" aria-hidden="true"></i
             ></span>
             <span role="img" aria-label="Python" title="Python"
               ><i class="fa-brands fa-python ui-icon" aria-hidden="true"></i
+            ></span>
+            <span role="img" aria-label="JavaScript" title="JavaScript"
+              ><i class="fa-brands fa-js ui-icon" aria-hidden="true"></i
+            ></span>
+            <span role="img" aria-label="TypeScript" title="TypeScript"
+              ><i class="fa-brands fa-typescript ui-icon" aria-hidden="true"></i
+            ></span>
+            <span role="img" aria-label="ReactJS" title="ReactJS"
+              ><i class="fa-brands fa-react ui-icon" aria-hidden="true"></i
             ></span>
             <span role="img" aria-label="Linux" title="Linux"
               ><i class="fa-brands fa-linux ui-icon" aria-hidden="true"></i
@@ -206,6 +209,9 @@
             ></span>
             <span role="img" aria-label="Kubernetes" title="Kubernetes"
               ><i class="fa-brands fa-kubernetes ui-icon" aria-hidden="true"></i
+            ></span>
+            <span role="img" aria-label="PostgreSQL" title="PostgreSQL"
+              ><i class="fa-brands fa-postgresql ui-icon" aria-hidden="true"></i
             ></span>
             <span role="img" aria-label="AWS" title="AWS"
               ><i class="fa-brands fa-aws ui-icon" aria-hidden="true"></i
@@ -322,7 +328,7 @@
                 <li class="primary-skill">Python</li>
                 <li>C#</li>
                 <li class="primary-skill">JavaScript</li>
-                <li>TypeScript</li>
+                <li class="primary-skill">TypeScript</li>
               </ul>
             </article>
             <article class="skill-group">
@@ -371,7 +377,7 @@
               </h4>
               <ul class="technology-list" role="list">
                 <li>MySQL</li>
-                <li>PostgreSQL</li>
+                <li class="primary-skill">PostgreSQL</li>
                 <li>Oracle</li>
                 <li>MSSQL</li>
                 <li>Redis</li>
@@ -1497,6 +1503,22 @@
         </section>
       </main>
       <footer class="site-footer">
+        <div class="footer-decoration" aria-hidden="true">
+          <div class="footer-landmark">
+            <span class="landmark-tier" style="--tier-width:100%;--tier-height:12%"></span>
+            <span class="landmark-tier" style="--tier-width:87%;--tier-height:22%"></span>
+            <span class="landmark-tier" style="--tier-width:74%;--tier-height:33%"></span>
+            <span class="landmark-tier" style="--tier-width:62%;--tier-height:44%"></span>
+            <span class="landmark-tier" style="--tier-width:51%;--tier-height:55%"></span>
+            <span class="landmark-tier" style="--tier-width:41%;--tier-height:65%"></span>
+            <span class="landmark-tier" style="--tier-width:32%;--tier-height:74%"></span>
+            <span class="landmark-tier" style="--tier-width:23%;--tier-height:82%"></span>
+            <span class="landmark-tier" style="--tier-width:14%;--tier-height:89%"></span>
+            <span class="landmark-spire"></span>
+          </div>
+          <i class="fa-regular fa-cloud footer-cloud footer-cloud-one"></i>
+          <i class="fa-regular fa-cloud footer-cloud footer-cloud-two"></i>
+        </div>
         <div class="footer-brand">
           <a class="brand" href="#intro"
             >cibofdevs<i
@@ -1510,13 +1532,11 @@
           <p class="footer-copyright">
             © <span id="current-year">2026</span> Ahmad Wijaya · Dubai
           </p>
-          <a href="#intro" class="back-top"
-            >Back to top
-            <span class="back-top-icon" aria-hidden="true"
-              ><i class="fa-regular fa-arrow-up ui-icon"></i></span
-          ></a>
         </div>
       </footer>
     </div>
+    <a href="#intro" class="back-top" aria-label="Back to top" title="Back to top" hidden>
+      <span class="back-top-icon" aria-hidden="true"><i class="fa-regular fa-arrow-up ui-icon"></i></span>
+    </a>
   </body>
 </html>

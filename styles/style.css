@@ -1623,6 +1623,9 @@ textarea {
 }
 
 .site-footer {
+  position: relative;
+  isolation: isolate;
+  min-height: 124px;
   margin-top: 32px;
   padding: 28px 0 32px;
   border-top: 1px solid var(--lavender);
@@ -1632,6 +1635,76 @@ textarea {
   gap: 24px;
   color: var(--muted);
   font-size: 12px;
+}
+
+.footer-decoration {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  color: var(--ink);
+  opacity: .08;
+  border-bottom: 1px solid currentColor;
+}
+
+.footer-brand,.footer-end {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-landmark {
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+  width: 60px;
+  height: 124px;
+}
+
+.landmark-tier {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--tier-width);
+  height: var(--tier-height);
+  border: 1px solid currentColor;
+  border-bottom: 0;
+  background: repeating-linear-gradient(to top,transparent 0 7px,currentColor 7px 8px,transparent 8px 10px),var(--page);
+}
+
+.landmark-spire {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 17%;
+  border-left: 1px solid currentColor;
+}
+
+.footer-landmark::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 46%;
+  height: 88%;
+  width: 9%;
+  border-inline: 1px solid currentColor;
+}
+
+.footer-cloud {
+  position: absolute;
+  line-height: 1;
+}
+
+.footer-cloud-one {
+  right: 52px;
+  bottom: 48px;
+  font-size: 34px;
+}
+
+.footer-cloud-two {
+  right: 0;
+  bottom: 23px;
+  font-size: 27px;
 }
 
 .site-footer .brand {
@@ -1652,16 +1725,41 @@ textarea {
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px 24px;
+  gap: 12px clamp(24px,5vw,64px);
 }
 
 .back-top {
+  position: fixed;
+  right: max(12px,env(safe-area-inset-right));
+  bottom: max(24px,env(safe-area-inset-bottom));
+  z-index: 30;
   display: inline-flex;
-  gap: 10px;
   align-items: center;
-  min-height: 44px;
-  font-size: 13px;
-  font-weight: 500;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--surface);
+  box-shadow: 0 4px 20px rgb(34 38 63 / .12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity .2s ease,transform .2s ease,visibility .2s ease;
+}
+
+.back-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+}
+
+@media(min-width:1000px) {
+  .back-top {
+    right: max(24px,env(safe-area-inset-right));
+  }
 }
 
 .back-top-icon {
@@ -2055,6 +2153,20 @@ textarea {
   }
   .site-footer {
     gap: 16px;
+  }
+  .footer-landmark {
+    height: 100px;
+    width: 46px;
+    right: 0;
+  }
+  .footer-cloud-one {
+    right: 40px;
+    bottom: 37px;
+    font-size: 27px;
+  }
+  .footer-cloud-two {
+    bottom: 16px;
+    font-size: 22px;
   }
   .site-footer>div {
     width: 100%;
