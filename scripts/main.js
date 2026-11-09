@@ -227,6 +227,51 @@ window.addEventListener('resize', scheduleNavigationUpdate);
 updateActiveNavigation();
 revealSections(document.querySelectorAll('main > .content-section'), reducedMotion);
 
+function initProjectCarousel() {
+  const track = document.getElementById('projects-track');
+  if (!track) return;
+  const controls = document.querySelector('.carousel-controls');
+  const prev = controls.querySelector('[data-carousel-prev]');
+  const next = controls.querySelector('[data-carousel-next]');
+  const thumb = document.querySelector('.carousel-progress span');
+  let frame = null;
+
+  function update() {
+    frame = null;
+    const max = track.scrollWidth - track.clientWidth;
+    const ratio = track.scrollWidth ? track.clientWidth / track.scrollWidth : 1;
+    const progress = max > 0 ? track.scrollLeft / max : 0;
+    controls.hidden = max <= 1;
+    prev.disabled = track.scrollLeft <= 1;
+    next.disabled = track.scrollLeft >= max - 1;
+    thumb.parentElement.hidden = max <= 1;
+    thumb.style.setProperty('--thumb', `${ratio * 100}%`);
+    thumb.style.setProperty('--offset', `${progress * (1 / ratio - 1) * 100}%`);
+  }
+
+  function schedule() {
+    if (frame === null) frame = window.requestAnimationFrame(update);
+  }
+
+  function step(direction) {
+    const slide = track.querySelector('.project-slide');
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    const visible = Math.max(1, Math.floor((track.clientWidth + gap) / (slide.offsetWidth + gap)));
+    track.scrollBy({
+      left: direction * visible * (slide.offsetWidth + gap),
+      behavior: reducedMotion.matches ? 'auto' : 'smooth'
+    });
+  }
+
+  prev.addEventListener('click', () => step(-1));
+  next.addEventListener('click', () => step(1));
+  track.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule);
+  update();
+}
+
+initProjectCarousel();
+
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 const submitButton = contactForm.querySelector('button[type="submit"]');

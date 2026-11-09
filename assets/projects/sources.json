@@ -48,5 +48,16 @@
       "readquranonline-640.webp",
       "readquranonline-1200.webp"
     ]
+  },
+  {
+    "project": "snippets",
+    "page_url": "https://muxy.app/store/snippets",
+    "image_url": null,
+    "note": "Custom-made preview (HTML mockup rendered to 1200x630), not taken from the project page",
+    "retrieved_on": "2026-11-10",
+    "files": [
+      "snippets-640.webp",
+      "snippets-1200.webp"
+    ]
   }
 ]
